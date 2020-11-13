@@ -1,0 +1,6 @@
+module Pods_ETHSDKONly {
+  umbrella header "Pods-ETHSDKONly-umbrella.h"
+
+  export *
+  module * { export * }
+}

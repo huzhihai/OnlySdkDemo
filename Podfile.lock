@@ -1,0 +1,26 @@
+PODS:
+  - CB_RIPEMD (0.9.0):
+    - OpenSSL-Universal
+  - LEB128 (2.0.0)
+  - OpenSSL-Universal (1.0.2.20):
+    - OpenSSL-Universal/Static (= 1.0.2.20)
+  - OpenSSL-Universal/Static (1.0.2.20)
+
+DEPENDENCIES:
+  - CB_RIPEMD (~> 0.9.0)
+  - LEB128 (~> 2.0.0)
+
+SPEC REPOS:
+  trunk:
+    - CB_RIPEMD
+    - LEB128
+    - OpenSSL-Universal
+
+SPEC CHECKSUMS:
+  CB_RIPEMD: 904acd812142ea66394f0b1c68edb98281fcc115
+  LEB128: 6ce2b6b603b03471e381afccf3db22546d62ec9f
+  OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
+
+PODFILE CHECKSUM: 4247911a1b1a61eae3f8b8c842b603136e8a66b1
+
+COCOAPODS: 1.9.1
