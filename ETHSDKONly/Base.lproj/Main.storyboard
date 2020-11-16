@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,103 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJh-eZ-lH4">
+                                <rect key="frame" x="20" y="94" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APN-3j-NnX">
+                                <rect key="frame" x="50" y="164.5" width="314" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yew-Mk-xHg"/>
+                                </constraints>
+                                <state key="normal" title="交易"/>
+                                <connections>
+                                    <action selector="transferAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Ku-DA-2AO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8d-Ep-geP">
+                                <rect key="frame" x="50" y="248.5" width="314" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WMw-pI-cOB"/>
+                                </constraints>
+                                <state key="normal" title="开通权益"/>
+                                <connections>
+                                    <action selector="inteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rks-FU-Ra4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oK-fg-Nnw">
+                                <rect key="frame" x="50" y="342.5" width="314" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="giY-wE-7K9"/>
+                                </constraints>
+                                <state key="normal" title="质押"/>
+                                <connections>
+                                    <action selector="pledgeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBt-XV-VoT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZg-h6-3qz">
+                                <rect key="frame" x="50" y="436.5" width="314" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0qG-TQ-SeZ"/>
+                                </constraints>
+                                <state key="normal" title="查询余额"/>
+                                <connections>
+                                    <action selector="balanceAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yPw-cE-tQL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-PZ-p3y">
+                                <rect key="frame" x="50" y="530.5" width="314" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uJi-rH-6ae"/>
+                                </constraints>
+                                <state key="normal" title="创建钱包"/>
+                                <connections>
+                                    <action selector="creatWalletAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vxR-sD-0L8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="APN-3j-NnX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="0tt-wq-lrq"/>
+                            <constraint firstItem="APN-3j-NnX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="18u-qG-VoY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="APN-3j-NnX" secondAttribute="trailing" constant="50" id="2lL-Wd-KWY"/>
+                            <constraint firstItem="8oK-fg-Nnw" firstAttribute="top" secondItem="c8d-Ep-geP" secondAttribute="bottom" constant="50" id="74P-j6-WPt"/>
+                            <constraint firstItem="c8d-Ep-geP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="CZo-EC-STY"/>
+                            <constraint firstItem="c8d-Ep-geP" firstAttribute="top" secondItem="APN-3j-NnX" secondAttribute="bottom" constant="40" id="EeV-YA-unb"/>
+                            <constraint firstItem="yZg-h6-3qz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="FFD-Cf-7cS"/>
+                            <constraint firstItem="APN-3j-NnX" firstAttribute="top" secondItem="eJh-eZ-lH4" secondAttribute="bottom" constant="50" id="JiF-91-Het"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eJh-eZ-lH4" secondAttribute="trailing" constant="20" id="N8l-LY-YZn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KaH-PZ-p3y" secondAttribute="trailing" constant="50" id="Rrc-zr-nhE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8oK-fg-Nnw" secondAttribute="trailing" constant="50" id="Rrn-jR-Bwq"/>
+                            <constraint firstItem="c8d-Ep-geP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UnS-GJ-HBQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yZg-h6-3qz" secondAttribute="trailing" constant="50" id="bR1-Xk-AYm"/>
+                            <constraint firstItem="8oK-fg-Nnw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bne-TP-duP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c8d-Ep-geP" secondAttribute="trailing" constant="50" id="cYI-9q-XFd"/>
+                            <constraint firstItem="eJh-eZ-lH4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dih-nn-9bd"/>
+                            <constraint firstItem="8oK-fg-Nnw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="f7b-e1-vMu"/>
+                            <constraint firstItem="KaH-PZ-p3y" firstAttribute="top" secondItem="yZg-h6-3qz" secondAttribute="bottom" constant="50" id="oZG-M1-2Oe"/>
+                            <constraint firstItem="yZg-h6-3qz" firstAttribute="top" secondItem="8oK-fg-Nnw" secondAttribute="bottom" constant="50" id="pRY-9X-dPJ"/>
+                            <constraint firstItem="yZg-h6-3qz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uH7-NT-kq5"/>
+                            <constraint firstItem="eJh-eZ-lH4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uZu-zp-vre"/>
+                            <constraint firstItem="eJh-eZ-lH4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="xHf-be-xoa"/>
+                            <constraint firstItem="KaH-PZ-p3y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="yxc-Sq-l26"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceLab" destination="eJh-eZ-lH4" id="heI-wt-ixr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-497" y="104"/>
         </scene>
     </scenes>
 </document>

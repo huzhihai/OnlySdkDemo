@@ -17,6 +17,7 @@
 @property (nonatomic,copy) NSString *mnemonicPhrase;
 @property (nonatomic,copy) NSString *privateKey;
 @property (nonatomic,copy) NSString *publicKey;
+@property (weak, nonatomic) IBOutlet UILabel *priceLab;
 
 @end
 
@@ -28,20 +29,47 @@
 
     
 }
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+
+///  交易
+- (IBAction)transferAction:(UIButton *)sender {
     [self traning];
-    
 }
+/// 开通权益
+- (IBAction)inteAction:(UIButton *)sender {
+    [self interests];
+}
+/// 质押
+- (IBAction)pledgeAction:(id)sender {
+    [self pledge];
+}
+// 查询
+- (IBAction)balanceAction:(id)sender {
+    [self getBalance];
+}
+- (IBAction)creatWalletAction:(id)sender {
+    [self creatWallet];
+}
+
+// 创建钱包
 - (void)creatWallet{
     [DCEther dc_createWithPwd:@"aa1234" path:Bip44Path block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, NSString *publicKey) {
-        
+        NSLog(@"钱包地址：%@，keyStore：%@,助记词:%@,私钥：%@,公钥:%@ /n 普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账",address,keyStore,mnemonicPhrase,privateKey,publicKey);
     }];
 }
 /// 查询余额
 - (void)getBalance{
+    __weak typeof(self) weSelf = self;
+   
     [DCEther dc_getOnlyBalanceAddress:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" success:^(id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
+        NSArray *array = responseObject[@"record"];
+        NSDictionary *dic = array[0];
+        NSString *price = dic[@"value"];
+        NSLog(@"%@",price);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //主线程执行
+             weSelf.priceLab.text = [NSString stringWithFormat:@"%@",price];
+        });
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"%@",error);
     }];
@@ -52,7 +80,7 @@
     NSArray *array = @[@{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":price}];
     [DCEther dc_transferArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" publicKey:@"025ad47e065ca397461ffb5231885a5cbdef6f1b4d3ad9b50413869f9311a75b09" address:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" block:^(BOOL isuc) {
         if (isuc) {
-            NSLog(@"交易完成");
+            NSLog(@"交易完成////普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账");
         }
     }];
 }
@@ -60,7 +88,7 @@
 - (void)interests{
     [DCEther dc_interestsActionWithPrice:@"5000" privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" publicKey:@"025ad47e065ca397461ffb5231885a5cbdef6f1b4d3ad9b50413869f9311a75b09" address:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" block:^(BOOL isuc) {
         if (isuc) {
-            NSLog(@"开通权益完成");
+            NSLog(@"开通权益完成////普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账");
         }
     }];
 }
@@ -70,7 +98,7 @@
     NSArray *array = @[@{@"address":@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd",@"price":price}];
     [DCEther dc_pledgeActionNetworkWithArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" publicKey:@"025ad47e065ca397461ffb5231885a5cbdef6f1b4d3ad9b50413869f9311a75b09" address:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" block:^(BOOL isuc) {
         if (isuc) {
-            NSLog(@"质押完成");
+            NSLog(@"质押完成////普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账");
         }
     }];
 }

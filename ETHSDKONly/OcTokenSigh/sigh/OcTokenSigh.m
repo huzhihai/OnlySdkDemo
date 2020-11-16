@@ -41,6 +41,9 @@
             return @"price 或者 address 传入key有误";
         }
         NSString *otherPrice = dic[@"price"];
+        if (otherPrice.length==0) {
+            otherPrice = @"0";
+        }
         NSString *otherAD = dic[@"address"];
         otherAD = [otherAD stringByReplacingOccurrencesOfString:@"oc"withString:@""];
         NSInteger sunPrice = [NSString stringWithFormat:@"%@",kYdecimalNum(otherPrice)].integerValue;

@@ -137,7 +137,7 @@ actionTypeNum
  
 }
 
-poundage 手续费:普通用户转账需要手续费即可发起交易，高级账号需要质押5000可以免手续费转账
+poundage 手续费:普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账
 
 array 包裹字典 （字典包含price  跟 address）,对方的信息
 
@@ -154,36 +154,42 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
     NSString *strUrl = [address stringByReplacingOccurrencesOfString:@"oc"withString:@""];
     NSDictionary *dic = @{@"address":strUrl,@"type":@"2"};
     static NSArray *infoArray;
+    static NSString *poundages = @"0";
     /// 请求noce
+    __weak typeof(self)  weakSelf = self;
     [self postWithUrlString:kgetAcountMsg parameters:dic success:^(id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         infoArray = dic[@"record"];
-        dispatch_group_leave(disgroup);
+        NSDictionary *dicInfo;
+        if (infoArray.count>0) {
+            dicInfo = infoArray[0];
+        }
+        NSString *rightValue = [NSString stringWithFormat:@"%@",dicInfo[@"rightValue"]];
+        NSString *qrM = kYdecimalNum(@"5000");
+        if (rightValue.integerValue<qrM.integerValue) {
+            /// 请求手续费
+            [weakSelf postWithUrlString:@"V_2_0_0/Node/getNodeInfo" parameters:dic success:^(id  _Nullable responseObject) {
+                NSDictionary *dic = responseObject[@"record"];
+                if ([[dic allKeys] containsObject:@"poundage"]) {
+                    if (rightValue.integerValue<qrM.integerValue) {
+                        poundages = dic[@"poundage"];
+                    }
+                }
+                dispatch_group_leave(disgroup);
+            } failure:^(NSError * _Nonnull error) {
+                 block(NO);
+                dispatch_group_leave(disgroup);
+               return;
+            }];
+        }else{
+            dispatch_group_leave(disgroup);
+        }
     } failure:^(NSError * _Nonnull error) {
         dispatch_group_leave(disgroup);
         block(NO);
+        return;
     }];
-    NSDictionary *dicInfo;
-    if (infoArray.count>0) {
-        dicInfo = infoArray[0];
-    }
-   static NSString *poundages = @"0";
-    NSString *rightValue = [NSString stringWithFormat:@"%@",dicInfo[@"rightValue"]];
-    NSString *qrM = kYdecimalNum(@"5000");
-    if (rightValue.integerValue<qrM.integerValue) {
-        dispatch_group_enter(disgroup);
-        /// 请求手续费
-        [self postWithUrlString:@"V_2_0_0/Node/getNodeInfo" parameters:dic success:^(id  _Nullable responseObject) {
-            NSDictionary *dic = responseObject[@"record"];
-            if ([[dic allKeys] containsObject:@"poundage"]) {
-                poundages = dic[@"poundage"];
-            }
-            dispatch_group_leave(disgroup);
-        } failure:^(NSError * _Nonnull error) {
-            dispatch_group_leave(disgroup);
-            block(NO);
-        }];
-    }
+
     ///  进行交易
     dispatch_group_notify(disgroup, dispatch_get_main_queue(), ^{
         int lockTimer = [[NSDate getNowTimeTimestamp] intValue];
