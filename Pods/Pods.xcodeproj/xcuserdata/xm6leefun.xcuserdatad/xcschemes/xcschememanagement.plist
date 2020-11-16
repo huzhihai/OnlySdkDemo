@@ -4,26 +4,36 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CB_RIPEMD.xcscheme_^#shared#^_</key>
+		<key>CB_RIPEMD.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>LEB128.xcscheme_^#shared#^_</key>
+		<key>LEB128.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>OpenSSL-Universal.xcscheme_^#shared#^_</key>
-		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-ETHSDKONly.xcscheme_^#shared#^_</key>
+		<key>OpenSSL-Universal.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-ETHSDKONly.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict/>
 </dict>
 </plist>

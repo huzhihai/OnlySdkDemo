@@ -7,21 +7,17 @@
 //
 /*
  
-1 添加pch文件，全局引入 #import <UIKit/UIKit.h>
-2 在需要使用的地方 引入 #import "HSEther.h"
-3 build setting > vaild architectures 去掉对 armv7的支持
-4  Only包含了swift 需要配置  xxxx-Bridging-Header，改完引入项目需要替换 ETHSDKONly-Swift 换成 xxxx-swift
- 5 需要引入加密规则
+1 在需要使用的地方 引入 #import "DCEther.h"
+2 build setting > vaild architectures 去掉对 armv7的支持
+  Only包含了swift 需要配置  xxxx-Bridging-Header，改完引入项目需要替换 ETHSDKONly-Swift 换成 xxxx-swift
+ 3 需要引入加密规则
     pod 'CB_RIPEMD', '~> 0.9.0'
     pod 'LEB128', '~> 2.0.0'
- 建议cocopods 引入
-  providsBaseUrl  only的节点，可以替换自己所需要的节点
+ 4 建议cocopods 引入
+ 5  providsBaseUrl  only的节点，可以替换自己所需要的节点
  6.使用Only 直接用dc 为开头的方法
   */
-#define providsBaseUrl @"http://101.200.145.35:9082/"// Only主网地址
-#define kgetAcountMsg @"V_2_0_0/Account/getUserAccount"//  获取用户信息api
-#define kreceiveActionAPI2 @"V_2_0_0/Action/receiveAction" //  交易api
-
+#define providsBaseUrl @"http://101.200.145.35:9082/"// Only节点
 #import <Foundation/Foundation.h>
 #import "HSEther.h"
 #import "ETHSDKONly-Swift.h"
@@ -61,11 +57,12 @@
 */
 + (void)dc_importWalletForPrivateKey:(NSString *)privateKey pwd:(NSString *)pwd block:(void(^)(NSString *address,NSString *keyStore,NSString *mnemonicPhrase,NSString *privateKey,NSString *publicKey,BOOL suc,HSWalletError error))block;
 /*
- version 2.0
-  only
- 单笔，多笔交易
-  privateKey 钱包的私钥
-  publicKey  钱包的公钥
+ 交易
+ 
+ 所有有关金额亿为单位  (重点重点重点!!!!)
+ 
+ privateKey 钱包的私钥
+ publicKey  钱包的公钥
  addrss     钱包的地址
  actionTypeNum
  {
@@ -82,17 +79,21 @@
  11：节点工作手续费
  12：手续费销毁
  }
- poundage 手续费
- array 包裹字典 （字典包含price {需要乘一个亿} 跟 address）,对方的信息
-
+ 
+ poundage 手续费:普通用户转账需要手续费即可发起交易，高级账号需要质押5000可以免手续费转账
+ 
+ array 包裹字典 （字典包含price:需要乘一个亿 跟 address）,对方的信息
+ 
  @[{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":@"100000000"}]
  */
+
 + (void)transArray:(NSArray *)array ActionTypeNum:(int)actionTypeNum poundage:(int)poundage privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey address:(NSString *)address block:(void(^)(BOOL isuc))block;
 /*
  查询接口
  address  钱包的地址
  */
 + (void)getOnlyBalanceAddress:(NSString *)address success:(void(^_Nonnull)(id  _Nullable responseObject))successBlock failure:(void(^_Nonnull)(NSError * _Nonnull error))failureBlock;
+
 @end
 
 

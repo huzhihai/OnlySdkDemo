@@ -1,14 +1,24 @@
-#only2.0
 
-1 添加pch文件，全局引入 #import <UIKit/UIKit.h>
-2 在需要使用的地方 引入 #import "DCEther.h"
-3 build setting > vaild architectures 去掉对 armv7的支持
+#ONLY
 
-4  Only 主要是OC语言开发  包含了swift 需要配置  xxxx-Bridging-Header，改完引入项目需要替换 ETHSDKONly-Swift 换成 xxxx-swift （重点，配置swift）
+引入项目中需要将  OcTokenSigh，eth  这两个文件导入到项目中一下是需要注意的事项：
 
- 5 需要引入加密规则
+
+1 在需要使用的地方 引入 #import "DCEther.h"
+
+2 build setting > vaild architectures 去掉对 armv7的支持
+
+3  Only 主要是OC语言开发  包含了swift 需要配置  xxxx-Bridging-Header，改完引入项目需要替换 ETHSDKONly-Swift 换成 xxxx-swift （重点重点重点重点!!!，配置swift）
+注释：由于用到了  LEB128  是swift 因此需要配置
+
+ 4 需要引入
     pod 'CB_RIPEMD', '~> 0.9.0'
     pod 'LEB128', '~> 2.0.0'
  建议cocopods 引入
-  providsBaseUrl  only的节点，可以替换自己所需要的节点
- 6.使用Only 直接用dc 为开头的方法
+ 
+5  providsBaseUrl  only的节点，可以替换自己所需要的节点
+  
+6.使用Only 直接用dc 为开头的方法
+ 
+7.所有有关金额都是以亿为单位  (重点重点重点!!!!)
+ 

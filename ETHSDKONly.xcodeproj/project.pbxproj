@@ -661,6 +661,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Debug;
 		};
@@ -690,6 +691,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "ETHSDKONly/ETHSDKONly-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
 			name = Release;
 		};

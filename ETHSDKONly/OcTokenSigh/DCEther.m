@@ -5,16 +5,16 @@
 //  Created by xm6leefun on 2020/9/17.
 //  Copyright © 2020 xm6leefun. All rights reserved.
 //
-
+#define kgetAcountMsg @"V_2_0_0/Account/getUserAccount"//  获取用户信息api
+#define kreceiveActionAPI2 @"V_2_0_0/Action/receiveAction" //  交易api
+#define Bip44Path @"m/44’/65535/0’/0/0"
 #import "DCEther.h"
-//#import <ethers/ethers.h>
 #import <CoreImage/CoreImage.h>
 #import <CommonCrypto/CommonCrypto.h>
 #import <CommonCrypto/CommonDigest.h>
 #import "CommonCrypto/CommonCryptor.h"
 #import "OcSecp256k1.h"
 #import "NSData+Hashing.h"
-
 #import "OcSecp256k1.h"
 #import <NSData+Hashing.h>
 #import "NSData+HexString.h"
@@ -23,15 +23,15 @@
 #import "NSMutableDictionary+ITWExtend.h"
 #import "NSDictionary+ITWExtend.h"
 #import "NSDate+add.h"
-//#import "YYKit.h"
-#import "DCAcountMsgInfoModel.h"
+
 @implementation DCEther
 
 ///  创建
 + (void)dc_createWithPwd:(NSString *)pwd path:(NSString *)path block:(void(^)(NSString *address,NSString *keyStore,NSString *mnemonicPhrase,NSString *privateKey,NSString *publicKey))block{
-    
+    if (path.length==0) {
+        path = Bip44Path;
+    }
     [self hs_createWithPwd:pwd path:path block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey) {
-        
         NSString  *privateKeyStr = [privateKey stringByReplacingOccurrencesOfString:@"0x" withString:@""];
         ///  转成data
         NSData *data = [self hexStringToData:privateKeyStr];
@@ -50,6 +50,9 @@
 }
 
 + (void)dc_inportMnemonics:(NSString *)mnemonics pwd:(NSString *)pwd path:(NSString *)path block:(void(^)(NSString *address,NSString *keyStore,NSString *mnemonicPhrase,NSString *privateKey,NSString *publicKey,BOOL suc,HSWalletError error))block{
+    if (path.length==0) {
+        path = Bip44Path;
+    }
     [self hs_inportMnemonics:mnemonics pwd:pwd path:path block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
         NSString  *privateKeyStr = [privateKey stringByReplacingOccurrencesOfString:@"0x" withString:@""];
         ///  转成data
@@ -63,13 +66,14 @@
         NSString *adress = [self dataToHexStringWithData:hash160];
         adress = [NSString stringWithFormat:@"oc%@",adress];
         publicKey = [publicKey stringByReplacingOccurrencesOfString:@"0x" withString:@""];
-        //        block(adress,keyStore,mnemonicPhrase,privateKeyStr,publicKey);
         block(adress,keyStore,mnemonicPhrase,privateKeyStr,publicKey,YES,error);
     }];
 }
 
 + (void)dc_importKeyStore:(NSString *)keyStore pwd:(NSString *)pwd path:(NSString *)path block:(void(^)(NSString *address,NSString *keyStore,NSString *mnemonicPhrase,NSString *privateKey,NSString *publicKey,BOOL suc,HSWalletError error))block{
-   
+   if (path.length==0) {
+       path = Bip44Path;
+   }
     [self hs_importKeyStore:keyStore pwd:pwd path:path block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
        NSString  *privateKeyStr = [privateKey stringByReplacingOccurrencesOfString:@"0x" withString:@""];
         ///  转成data
@@ -83,7 +87,6 @@
         NSString *adress = [self dataToHexStringWithData:hash160];
         adress = [NSString stringWithFormat:@"oc%@",adress];
         publicKey = [publicKey stringByReplacingOccurrencesOfString:@"0x" withString:@""];
-        //        block(adress,keyStore,mnemonicPhrase,privateKeyStr,publicKey);
         block(adress,keyStore,mnemonicPhrase,privateKeyStr,publicKey,YES,error);
     }];
 }
@@ -140,7 +143,7 @@
         }
         NSString *noce = [NSString stringWithFormat:@"%@",dicInfo[@"noce"]];
         int index = noce.intValue+1;
-        NSString *message = [OcTokenSigh moretrantingVersion2WithActionTypeNum:actionTypeNum poundage:poundage timestamp:lockTimer noce:[NSString stringWithFormat:@"%d",index] otherArray:array privateKey:privateKey publicKey:publicKey];
+        NSString *message = [OcTokenSigh trantingWithActionTypeNum:actionTypeNum poundage:poundage timestamp:lockTimer noce:[NSString stringWithFormat:@"%d",index] otherArray:array privateKey:privateKey publicKey:publicKey];
         NSDictionary *dic = @{@"action":message};
         if ([message containsString:@"传入key有误"]) {
             return;
@@ -189,6 +192,9 @@
     }
     return hexString;
 }
+
+
+
 //GET请求
 + (void)getWithUrlString:(NSString *)url parameters:(id)parameters success:(void(^)(id  _Nullable responseObject))successBlock failure:(void(^)(NSError * _Nonnull error))failureBlock
 {
