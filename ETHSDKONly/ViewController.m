@@ -9,8 +9,6 @@
 #import "ViewController.h"
 #import "DCEther.h"
 
-#define kYdecimalNum(x) [[[NSDecimalNumber decimalNumberWithString:x] decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"100000000"]] stringValue]
-
 #define Bip44Path @"m/44’/65535/0’/0/0"
 @interface ViewController ()
 
@@ -32,7 +30,7 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [self getBalance];
+    [self traning];
     
 }
 - (void)creatWallet{
@@ -42,7 +40,7 @@
 }
 /// 查询余额
 - (void)getBalance{
-    [DCEther getOnlyBalanceAddress:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" success:^(id  _Nullable responseObject) {
+    [DCEther dc_getOnlyBalanceAddress:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" success:^(id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -50,15 +48,30 @@
 }
 /// 交易
 - (void)traning{
-    NSString *price = kYdecimalNum(@"0.00001");
-       NSArray *array = @[@{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":price}];
-    
-    /// 手续费用亿为单位
-    [DCEther transArray:array ActionTypeNum:1 poundage:10000 privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" publicKey:@"025ad47e065ca397461ffb5231885a5cbdef6f1b4d3ad9b50413869f9311a75b09" address:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" block:^(BOOL isuc) {
+    NSString *price =@"0.00001";
+    NSArray *array = @[@{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":price}];
+    [DCEther dc_transferArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" publicKey:@"025ad47e065ca397461ffb5231885a5cbdef6f1b4d3ad9b50413869f9311a75b09" address:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" block:^(BOOL isuc) {
         if (isuc) {
             NSLog(@"交易完成");
         }
     }];
 }
-
+/// 开通权益
+- (void)interests{
+    [DCEther dc_interestsActionWithPrice:@"5000" privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" publicKey:@"025ad47e065ca397461ffb5231885a5cbdef6f1b4d3ad9b50413869f9311a75b09" address:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" block:^(BOOL isuc) {
+        if (isuc) {
+            NSLog(@"开通权益完成");
+        }
+    }];
+}
+///  质押
+- (void)pledge{
+    NSString *price =@"1";
+    NSArray *array = @[@{@"address":@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd",@"price":price}];
+    [DCEther dc_pledgeActionNetworkWithArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" publicKey:@"025ad47e065ca397461ffb5231885a5cbdef6f1b4d3ad9b50413869f9311a75b09" address:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" block:^(BOOL isuc) {
+        if (isuc) {
+            NSLog(@"质押完成");
+        }
+    }];
+}
 @end

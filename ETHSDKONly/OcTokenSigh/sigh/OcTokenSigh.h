@@ -41,7 +41,7 @@
  allPrice 交易的金额
  noce 交易的Noce值,从账户接口获取，获取到的 noce+1 进行入参
 */
-+ (NSString *)trantingWithActionTypeNum:(int)actionTypeNum poundage:(int)poundage timestamp:(int)timestamp noce:(NSString *)noce otherArray:(NSArray *)otherArray privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey;
++ (NSString *)trantingWithActionTypeNum:(int)actionTypeNum poundage:(NSString *)poundage timestamp:(int)timestamp noce:(NSString *)noce otherArray:(NSArray *)otherArray privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey;
 
 
 /*
@@ -53,8 +53,16 @@
  publicKey 公钥
  返回序列化 action
  */
-+ (NSString *)pledgeActionNetworkWithoterarray:(NSArray *)oterarray noce:(NSString *)noce poundage:(int)poundage privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey;
-
++ (NSString *)pledgeActionNetworkWithoterarray:(NSArray *)oterarray noce:(NSString *)noce poundage:(NSString *)poundage privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey;
+/*
+ 开通权益
+ oterarray 需要质押的数组 包裹字典 （字典包含price 跟 address)
+ noce 交易的Noce值,从账户接口获取，获取到的 noce+1 进行入参
+ privateKey 私钥
+ publicKey 公钥
+ 返回序列化 actio
+ */
++ (NSString *)interestsActionnoNetworkWithoterarray:(NSArray *)oterarray poundage:(NSString *)poundage noce:(NSString *)noce privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey;
 /*
 
  账户 进行序列化
@@ -76,14 +84,6 @@
  */
 + (void)singserializationMessageWithMessage:(NSString *)message successful:(void(^)(NSDictionary *data))successful failure:(void(^)(void))failure;
 
-/*
- 开通权益
- oterarray 需要质押的数组 包裹字典 （字典包含price 跟 address)
- noce 交易的Noce值,从账户接口获取，获取到的 noce+1 进行入参
- privateKey 私钥
- publicKey 公钥
- 返回序列化 actio
- */
-+ (NSString *)interestsActionnoNetworkWithoterarray:(NSArray *)oterarray noce:(NSString *)noce privateKey:(NSString *)privateKey publicKey:(NSString *)publicKe;
+
 @end
 

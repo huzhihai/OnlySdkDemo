@@ -56,43 +56,41 @@
 @param block 导入回调
 */
 + (void)dc_importWalletForPrivateKey:(NSString *)privateKey pwd:(NSString *)pwd block:(void(^)(NSString *address,NSString *keyStore,NSString *mnemonicPhrase,NSString *privateKey,NSString *publicKey,BOOL suc,HSWalletError error))block;
+
 /*
  交易
- 
- 所有有关金额亿为单位  (重点重点重点!!!!)
- 
  privateKey 钱包的私钥
  publicKey  钱包的公钥
  addrss     钱包的地址
- actionTypeNum
- {
- 1：普通转账
- 2：已经废弃不用，之前为投票质押
- 3：暂未开放，超级节点质押
- 4：开通权益
- 5：投票者激励
- 6：9个备选节点激励
- 7：21个工作节点激励
- 8：极客社群激励
- 9：质押挖矿
- 10：21+9+N节点激励
- 11：节点工作手续费
- 12：手续费销毁
- }
- 
- poundage 手续费:普通用户转账需要手续费即可发起交易，高级账号需要质押5000可以免手续费转账
- 
- array 包裹字典 （字典包含price:需要乘一个亿 跟 address）,对方的信息
- 
- @[{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":@"100000000"}]
+ array 包裹字典 （字典包含price  跟 address）,对方的信息
+ @[{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":@"0.01"}]
  */
 
-+ (void)transArray:(NSArray *)array ActionTypeNum:(int)actionTypeNum poundage:(int)poundage privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey address:(NSString *)address block:(void(^)(BOOL isuc))block;
++ (void)dc_transferArray:(NSArray *)array privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey address:(NSString *)address block:(void(^)(BOOL isuc))block;
 /*
  查询接口
  address  钱包的地址
  */
-+ (void)getOnlyBalanceAddress:(NSString *)address success:(void(^_Nonnull)(id  _Nullable responseObject))successBlock failure:(void(^_Nonnull)(NSError * _Nonnull error))failureBlock;
++ (void)dc_getOnlyBalanceAddress:(NSString *)address success:(void(^_Nonnull)(id  _Nullable responseObject))successBlock failure:(void(^_Nonnull)(NSError * _Nonnull error))failureBlock;
+/*
+ 开通权益
+ price 开通权益的金额
+ privateKey 钱包的私钥
+ publicKey 钱包的公钥
+ address 钱包的地址
+ */
++ (void)dc_interestsActionWithPrice:(NSString *)price privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey address:(NSString *)address block:(void(^)(BOOL isuc))block;
+/*
+ 质押
+ 
+ array  包裹字典 （字典包含price  跟 address）
+ @[{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":@"0.01"}]
+ 
+ privateKey 钱包的私钥
+ publicKey 钱包的公钥
+ address 钱包的地址
+ */
++ (void)dc_pledgeActionNetworkWithArray:(NSArray *)array privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey address:(NSString *)address block:(void(^)(BOOL isuc))block;
 
 @end
 

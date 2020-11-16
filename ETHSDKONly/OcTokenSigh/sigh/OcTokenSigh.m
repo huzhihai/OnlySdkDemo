@@ -26,7 +26,7 @@
 #import "NSDate+add.h"
 @implementation OcTokenSigh
 /// 交易
-+ (NSString *)trantingWithActionTypeNum:(int)actionTypeNum poundage:(int)poundage timestamp:(int)timestamp noce:(NSString *)noce otherArray:(NSArray *)otherArray privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey{
++ (NSString *)trantingWithActionTypeNum:(int)actionTypeNum poundage:(NSString *)poundage timestamp:(int)timestamp noce:(NSString *)noce otherArray:(NSArray *)otherArray privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey{
     if (otherArray.count==0) {
         return @"sorry nothing";
     }
@@ -42,7 +42,8 @@
         }
         NSString *otherPrice = dic[@"price"];
         NSString *otherAD = dic[@"address"];
-        NSInteger sunPrice = [NSString stringWithFormat:@"%@",otherPrice].integerValue;
+        otherAD = [otherAD stringByReplacingOccurrencesOfString:@"oc"withString:@""];
+        NSInteger sunPrice = [NSString stringWithFormat:@"%@",kYdecimalNum(otherPrice)].integerValue;
         /// 拼接上金额 十六进制
         resultAllString = [resultAllString stringByAppendingString:[self changeDataTo16BytesWithData:sunPrice]];
         // 锁定的脚本
@@ -50,7 +51,7 @@
         //结果序列 拼接上锁定的脚本
         resultAllString = [resultAllString stringByAppendingString:scripString];
     }
-    if (actionTypeNum==4) {// 如果类型是4 的话需要时间戳加上区块高度
+    if (actionTypeNum==4) {
         resultAllString = [resultAllString stringByAppendingString:[self getLEB128Timerindex:31536000]];
     }else if (actionTypeNum==9){
         resultAllString = [resultAllString stringByAppendingString:[self getLEB128Timerindex:100000]];
@@ -67,7 +68,9 @@
     //交易的noce
     resultAllString = [resultAllString stringByAppendingFormat:@"%@",[self getLEB128Timerindex:noces]];
     //结果序列 拼接上手续费
-    resultAllString = [resultAllString stringByAppendingFormat:@"%@",[self changeDataTo16BytesWithData:poundage]];
+    NSString *poun = [NSString stringWithFormat:@"%@",poundage];
+//    poun = kYdecimalNum(poun);
+    resultAllString = [resultAllString stringByAppendingFormat:@"%@",[self changeDataTo16BytesWithData:poun.integerValue]];
     //结果序列  拼接 0100--固定拼接
     resultAllString = [resultAllString stringByAppendingFormat:@"0100"];
     // 序列结果进行转码  action sign
@@ -83,6 +86,34 @@
     resultAllString = [resultAllString stringByAppendingFormat:@"%@",sighData246sign];
 //    NSLog(@"%@",resultAllString);
     return resultAllString;
+}
+/*
+ 质押
+oterarray 需要质押的数组 包裹字典 （字典包含price 跟 address
+noce 交易的Noce值,从账户接口获取，获取到的 noce+1 进行入参
+poundage 手续费 开通完权益 不需要手续费
+privateKey 私钥
+publicKey 公钥
+ 返回序列化 action
+*/
++ (NSString *)pledgeActionNetworkWithoterarray:(NSArray *)oterarray noce:(NSString *)noce poundage:(NSString *)poundage privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey{
+    int lockTimer = [[NSDate getNowTimeTimestamp] intValue];
+    NSString *sigs = [self trantingWithActionTypeNum:9 poundage:poundage timestamp:lockTimer noce:noce otherArray:oterarray privateKey:privateKey publicKey:publicKey];
+    return sigs;
+}
+
+/*
+ 开通权益
+ oterarray 需要质押的数组 包裹字典 （字典包含price 跟 address)
+ noce 交易的Noce值,从账户接口获取，获取到的 noce+1 进行入参
+ privateKey 私钥
+ publicKey 公钥
+ 返回序列化 actio
+ */
++ (NSString *)interestsActionnoNetworkWithoterarray:(NSArray *)oterarray poundage:(NSString *)poundage noce:(NSString *)noce privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey{
+    int lockTimer = [[NSDate getNowTimeTimestamp] intValue];
+    NSString *sigs = [self trantingWithActionTypeNum:4 poundage:poundage timestamp:lockTimer noce:noce otherArray:oterarray privateKey:privateKey publicKey:publicKey];
+    return sigs;
 }
 
 /*
@@ -397,32 +428,6 @@
     }
 }
 
-/*
- 质押
-oterarray 需要质押的数组 包裹字典 （字典包含price 跟 address
-noce 交易的Noce值,从账户接口获取，获取到的 noce+1 进行入参
-poundage 手续费 开通完权益 不需要手续费
-privateKey 私钥
-publicKey 公钥
- 返回序列化 action 
-*/
-+ (NSString *)pledgeActionNetworkWithoterarray:(NSArray *)oterarray noce:(NSString *)noce poundage:(int)poundage privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey{
-    int lockTimer = [[NSDate getNowTimeTimestamp] intValue];
-    NSString *sigs = [self trantingWithActionTypeNum:9 poundage:poundage timestamp:lockTimer noce:noce otherArray:oterarray privateKey:privateKey publicKey:publicKey];
-    return sigs;
-}
 
-/*
- 开通权益
- oterarray 需要质押的数组 包裹字典 （字典包含price 跟 address)
- noce 交易的Noce值,从账户接口获取，获取到的 noce+1 进行入参
- privateKey 私钥
- publicKey 公钥
- 返回序列化 actio
- */
-+ (NSString *)interestsActionnoNetworkWithoterarray:(NSArray *)oterarray noce:(NSString *)noce privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey{
-    int lockTimer = [[NSDate getNowTimeTimestamp] intValue];
-    NSString *sigs = [self trantingWithActionTypeNum:4 poundage:0 timestamp:lockTimer noce:noce otherArray:oterarray privateKey:privateKey publicKey:publicKey];
-    return sigs;
-}
+
 @end
