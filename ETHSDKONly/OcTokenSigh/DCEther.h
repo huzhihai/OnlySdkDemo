@@ -27,6 +27,7 @@
 /**
  创建钱包
  only
+ path 默认可以不写
  @param pwd 密码
  @param block 创建成功回调
  */
@@ -34,6 +35,7 @@
 /**
 助记词导入
  only
+ path 默认可以不写
 @param mnemonics 助记词 12个英文单词 空格分割
 @param pwd 密码
 @param block 导入回调
@@ -43,6 +45,7 @@
 /**
  KeyStore 导入
  only
+ path 默认可以不写
  @param keyStore keyStore文本，类似json
  @param pwd 密码
  @param block 导入回调
