@@ -8,7 +8,12 @@
 
 #import "ViewController.h"
 #import "DCEther.h"
-
+#import "TraningViewController.h"
+#import "PledgeViewController.h"
+#import "CreatWalletViewController.h"
+#import "ImportMnemonicViewController.h"
+#import "ImportKeystoreViewController.h"
+#import "ImportPrivateKeyViewController.h"
 #define Bip44Path @"m/44’/65535/0’/0/0"
 @interface ViewController ()
 
@@ -32,7 +37,9 @@
 
 ///  交易
 - (IBAction)transferAction:(UIButton *)sender {
-    [self traning];
+//    [self traning];
+    TraningViewController *vc = [TraningViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 /// 开通权益
 - (IBAction)inteAction:(UIButton *)sender {
@@ -40,14 +47,42 @@
 }
 /// 质押
 - (IBAction)pledgeAction:(id)sender {
-    [self pledge];
+//    [self pledge];
+    PledgeViewController *vc = [PledgeViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 // 查询
 - (IBAction)balanceAction:(id)sender {
     [self getBalance];
 }
+//创建钱包
 - (IBAction)creatWalletAction:(id)sender {
-    [self creatWallet];
+//    [self creatWallet];
+    CreatWalletViewController *vc = [CreatWalletViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+- (IBAction)importWalletAction:(id)sender {
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"" message:@"导入钱包" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *mnemonicAction = [UIAlertAction actionWithTitle:@"助记词导入" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        ImportMnemonicViewController *vc = [ImportMnemonicViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+    }];
+    UIAlertAction *keystoreAction = [UIAlertAction actionWithTitle:@"keystore导入" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        ImportKeystoreViewController *vc = [ImportKeystoreViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+    }];
+    UIAlertAction *privateKeyAction = [UIAlertAction actionWithTitle:@"私钥导入" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        ImportPrivateKeyViewController *vc = [ImportPrivateKeyViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+    }];
+    UIAlertAction *canceAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVC addAction:mnemonicAction];
+    [alertVC addAction:keystoreAction];
+    [alertVC addAction:privateKeyAction];
+    [alertVC addAction:canceAction];
+    [self presentViewController:alertVC animated:YES completion:^{}];
 }
 
 // 创建钱包

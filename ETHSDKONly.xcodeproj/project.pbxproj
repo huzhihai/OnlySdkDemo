@@ -29,6 +29,18 @@
 		AC7F5D9E255D67E60040FB98 /* NSDictionary+ITWExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5D9C255D67E50040FB98 /* NSDictionary+ITWExtend.m */; };
 		AC7F5DA1255D69720040FB98 /* DCAcountMsgInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5DA0255D69720040FB98 /* DCAcountMsgInfoModel.m */; };
 		BE9912EE9E25EF2409194C72 /* libPods-ETHSDKONly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A39C051FE5F828DBC50CC7 /* libPods-ETHSDKONly.a */; };
+		DB877A5C25660155000A089C /* TraningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB877A5A25660155000A089C /* TraningViewController.m */; };
+		DB877A5D25660155000A089C /* TraningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB877A5B25660155000A089C /* TraningViewController.xib */; };
+		DB877A6125660371000A089C /* PledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB877A5F25660371000A089C /* PledgeViewController.m */; };
+		DB877A6225660371000A089C /* PledgeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB877A6025660371000A089C /* PledgeViewController.xib */; };
+		DB877A6625660508000A089C /* CreatWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB877A6425660508000A089C /* CreatWalletViewController.m */; };
+		DB877A6725660508000A089C /* CreatWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB877A6525660508000A089C /* CreatWalletViewController.xib */; };
+		DB877A6B256609D1000A089C /* ImportMnemonicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB877A69256609D1000A089C /* ImportMnemonicViewController.m */; };
+		DB877A6C256609D1000A089C /* ImportMnemonicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB877A6A256609D1000A089C /* ImportMnemonicViewController.xib */; };
+		DB877A7025660C91000A089C /* ImportKeystoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB877A6E25660C91000A089C /* ImportKeystoreViewController.m */; };
+		DB877A7125660C91000A089C /* ImportKeystoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB877A6F25660C91000A089C /* ImportKeystoreViewController.xib */; };
+		DB877A7525660D76000A089C /* ImportPrivateKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB877A7325660D76000A089C /* ImportPrivateKeyViewController.m */; };
+		DB877A7625660D76000A089C /* ImportPrivateKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB877A7425660D76000A089C /* ImportPrivateKeyViewController.xib */; };
 		DB87D9F6255E3B5D00DE7993 /* hsether.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB87D9F2255E3B5D00DE7993 /* hsether.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +105,24 @@
 		AC7F5D9F255D69720040FB98 /* DCAcountMsgInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAcountMsgInfoModel.h; sourceTree = "<group>"; };
 		AC7F5DA0255D69720040FB98 /* DCAcountMsgInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAcountMsgInfoModel.m; sourceTree = "<group>"; };
 		CAEF111A3A84357C3E8344B0 /* Pods-ETHSDKONly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETHSDKONly.debug.xcconfig"; path = "Target Support Files/Pods-ETHSDKONly/Pods-ETHSDKONly.debug.xcconfig"; sourceTree = "<group>"; };
+		DB877A5925660155000A089C /* TraningViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TraningViewController.h; sourceTree = "<group>"; };
+		DB877A5A25660155000A089C /* TraningViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TraningViewController.m; sourceTree = "<group>"; };
+		DB877A5B25660155000A089C /* TraningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TraningViewController.xib; sourceTree = "<group>"; };
+		DB877A5E25660371000A089C /* PledgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PledgeViewController.h; sourceTree = "<group>"; };
+		DB877A5F25660371000A089C /* PledgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PledgeViewController.m; sourceTree = "<group>"; };
+		DB877A6025660371000A089C /* PledgeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PledgeViewController.xib; sourceTree = "<group>"; };
+		DB877A6325660508000A089C /* CreatWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatWalletViewController.h; sourceTree = "<group>"; };
+		DB877A6425660508000A089C /* CreatWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatWalletViewController.m; sourceTree = "<group>"; };
+		DB877A6525660508000A089C /* CreatWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatWalletViewController.xib; sourceTree = "<group>"; };
+		DB877A68256609D1000A089C /* ImportMnemonicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportMnemonicViewController.h; sourceTree = "<group>"; };
+		DB877A69256609D1000A089C /* ImportMnemonicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImportMnemonicViewController.m; sourceTree = "<group>"; };
+		DB877A6A256609D1000A089C /* ImportMnemonicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportMnemonicViewController.xib; sourceTree = "<group>"; };
+		DB877A6D25660C91000A089C /* ImportKeystoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportKeystoreViewController.h; sourceTree = "<group>"; };
+		DB877A6E25660C91000A089C /* ImportKeystoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImportKeystoreViewController.m; sourceTree = "<group>"; };
+		DB877A6F25660C91000A089C /* ImportKeystoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportKeystoreViewController.xib; sourceTree = "<group>"; };
+		DB877A7225660D76000A089C /* ImportPrivateKeyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportPrivateKeyViewController.h; sourceTree = "<group>"; };
+		DB877A7325660D76000A089C /* ImportPrivateKeyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImportPrivateKeyViewController.m; sourceTree = "<group>"; };
+		DB877A7425660D76000A089C /* ImportPrivateKeyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportPrivateKeyViewController.xib; sourceTree = "<group>"; };
 		DB87D9F2255E3B5D00DE7993 /* hsether.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = hsether.a; sourceTree = "<group>"; };
 		DB87D9F5255E3B5D00DE7993 /* HSEther.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEther.h; sourceTree = "<group>"; };
 		E38A3EF8A40088536F6A97C8 /* Pods-ETHSDKONly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETHSDKONly.release.xcconfig"; path = "Target Support Files/Pods-ETHSDKONly/Pods-ETHSDKONly.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +203,24 @@
 				AC7F5D27255D65AF0040FB98 /* ETHSDKONly-Bridging-Header.h */,
 				AC7F5D6D255D66740040FB98 /* OcTokenSigh */,
 				AC7F5D2A255D65F90040FB98 /* eth */,
+				DB877A5925660155000A089C /* TraningViewController.h */,
+				DB877A5A25660155000A089C /* TraningViewController.m */,
+				DB877A5B25660155000A089C /* TraningViewController.xib */,
+				DB877A5E25660371000A089C /* PledgeViewController.h */,
+				DB877A5F25660371000A089C /* PledgeViewController.m */,
+				DB877A6025660371000A089C /* PledgeViewController.xib */,
+				DB877A6325660508000A089C /* CreatWalletViewController.h */,
+				DB877A6425660508000A089C /* CreatWalletViewController.m */,
+				DB877A6525660508000A089C /* CreatWalletViewController.xib */,
+				DB877A68256609D1000A089C /* ImportMnemonicViewController.h */,
+				DB877A69256609D1000A089C /* ImportMnemonicViewController.m */,
+				DB877A6A256609D1000A089C /* ImportMnemonicViewController.xib */,
+				DB877A6D25660C91000A089C /* ImportKeystoreViewController.h */,
+				DB877A6E25660C91000A089C /* ImportKeystoreViewController.m */,
+				DB877A6F25660C91000A089C /* ImportKeystoreViewController.xib */,
+				DB877A7225660D76000A089C /* ImportPrivateKeyViewController.h */,
+				DB877A7325660D76000A089C /* ImportPrivateKeyViewController.m */,
+				DB877A7425660D76000A089C /* ImportPrivateKeyViewController.xib */,
 			);
 			path = ETHSDKONly;
 			sourceTree = "<group>";
@@ -403,8 +451,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB877A6C256609D1000A089C /* ImportMnemonicViewController.xib in Resources */,
+				DB877A5D25660155000A089C /* TraningViewController.xib in Resources */,
+				DB877A7125660C91000A089C /* ImportKeystoreViewController.xib in Resources */,
+				DB877A7625660D76000A089C /* ImportPrivateKeyViewController.xib in Resources */,
+				DB877A6725660508000A089C /* CreatWalletViewController.xib in Resources */,
 				AC7F5D02255D61FC0040FB98 /* LaunchScreen.storyboard in Resources */,
 				AC7F5CFF255D61FC0040FB98 /* Assets.xcassets in Resources */,
+				DB877A6225660371000A089C /* PledgeViewController.xib in Resources */,
 				AC7F5CFD255D61FA0040FB98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,17 +510,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC7F5D92255D66740040FB98 /* OcTokenLEB128.swift in Sources */,
+				DB877A7025660C91000A089C /* ImportKeystoreViewController.m in Sources */,
 				AC7F5D9D255D67E60040FB98 /* NSMutableDictionary+ITWExtend.m in Sources */,
 				AC7F5D93255D66740040FB98 /* Zm10J16.m in Sources */,
+				DB877A6125660371000A089C /* PledgeViewController.m in Sources */,
 				AC7F5DA1255D69720040FB98 /* DCAcountMsgInfoModel.m in Sources */,
+				DB877A5C25660155000A089C /* TraningViewController.m in Sources */,
+				DB877A6B256609D1000A089C /* ImportMnemonicViewController.m in Sources */,
 				AC7F5D94255D66740040FB98 /* OcTokenSigh.m in Sources */,
 				AC7F5CFA255D61FA0040FB98 /* ViewController.m in Sources */,
 				AC7F5D8C255D66740040FB98 /* NSData+HexString.m in Sources */,
+				DB877A6625660508000A089C /* CreatWalletViewController.m in Sources */,
 				AC7F5CF4255D61FA0040FB98 /* AppDelegate.m in Sources */,
 				AC7F5D8F255D66740040FB98 /* TransferVinModel.m in Sources */,
 				AC7F5D6C255D66550040FB98 /* DCEther.m in Sources */,
 				AC7F5D91255D66740040FB98 /* NSDate+add.m in Sources */,
 				AC7F5D8D255D66740040FB98 /* OcSecp256k1.m in Sources */,
+				DB877A7525660D76000A089C /* ImportPrivateKeyViewController.m in Sources */,
 				AC7F5D9E255D67E60040FB98 /* NSDictionary+ITWExtend.m in Sources */,
 				AC7F5D05255D61FC0040FB98 /* main.m in Sources */,
 				AC7F5CF7255D61FA0040FB98 /* SceneDelegate.m in Sources */,
