@@ -112,7 +112,7 @@
 - (void)traning{
     NSString *price =@"0.00001";
     NSArray *array = @[@{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":price}];
-    [DCEther dc_transferArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:0 poundage:@"" block:^(BOOL isuc,id  _Nullable responseObject) {
+    [DCEther dc_transferArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:0 poundage:@"0.001" block:^(BOOL isuc,id  _Nullable responseObject) {
         if (isuc) {
             NSLog(@"交易完成////普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账");
         }
@@ -131,7 +131,7 @@
 - (void)pledge{
     NSString *price =@"1";
     NSArray *array = @[@{@"address":@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd",@"price":price}];
-    [DCEther dc_pledgeActionNetworkWithArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:0 poundage:@"" block:^(BOOL isuc,id  _Nullable responseObject) {
+    [DCEther dc_pledgeActionNetworkWithArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:0 poundage:@"0.001" block:^(BOOL isuc,id  _Nullable responseObject) {
         if (isuc) {
             NSLog(@"质押完成////普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账");
         }
