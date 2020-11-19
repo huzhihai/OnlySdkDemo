@@ -28,6 +28,7 @@
     // Do any additional setup after loading the view from its nib.
     self.pundege = @"0.001";
     self.poundageLab.text = [NSString stringWithFormat:@"手续费：%@ only",self.pundege];
+    self.priKeyTF.text = @"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02";
 }
 - (IBAction)poundgeaAction:(UISlider *)sender {
     float value = sender.value;
