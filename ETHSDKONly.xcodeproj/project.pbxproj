@@ -189,6 +189,8 @@
 		AC7F5CF1255D61FA0040FB98 /* ETHSDKONly */ = {
 			isa = PBXGroup;
 			children = (
+				AC7F5D6D255D66740040FB98 /* OcTokenSigh */,
+				AC7F5D2A255D65F90040FB98 /* eth */,
 				AC7F5CF2255D61FA0040FB98 /* AppDelegate.h */,
 				AC7F5CF3255D61FA0040FB98 /* AppDelegate.m */,
 				AC7F5CF5255D61FA0040FB98 /* SceneDelegate.h */,
@@ -201,8 +203,6 @@
 				AC7F5D03255D61FC0040FB98 /* Info.plist */,
 				AC7F5D04255D61FC0040FB98 /* main.m */,
 				AC7F5D27255D65AF0040FB98 /* ETHSDKONly-Bridging-Header.h */,
-				AC7F5D6D255D66740040FB98 /* OcTokenSigh */,
-				AC7F5D2A255D65F90040FB98 /* eth */,
 				DB877A5925660155000A089C /* TraningViewController.h */,
 				DB877A5A25660155000A089C /* TraningViewController.m */,
 				DB877A5B25660155000A089C /* TraningViewController.xib */,

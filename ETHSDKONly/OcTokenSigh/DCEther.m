@@ -298,7 +298,7 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
     if (noce==0) {
         noce = 0;
     }
-    if (poundage.length==0||poundage.intValue==0) {
+    if (poundage.length==0||poundage.floatValue==0) {
         poundage = @"0";
     }
     
@@ -323,7 +323,7 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
     if (noce==0) {
         noce = 0;
     }
-    if (poundage.length==0||poundage.intValue==0) {
+    if (poundage.length==0||poundage.floatValue==0) {
         poundage = @"0";
     }
     [self transArray:array ActionTypeNum:4 outnoce:[NSString stringWithFormat:@"%d",noce] poundage:poundage privateKey:privateKey address:address publicKey:publicKey block:^(BOOL isuc,id  _Nullable responseObject) {
@@ -345,7 +345,7 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
     if (noce==0) {
         noce = 0;
     }
-    if (poundage.length==0||poundage.intValue==0) {
+    if (poundage.length==0||poundage.floatValue==0) {
         poundage = @"0";
     }
     [self transArray:array ActionTypeNum:9 outnoce:[NSString stringWithFormat:@"%d",noce] poundage:poundage privateKey:privateKey address:address publicKey:publicKey block:^(BOOL isuc,id  _Nullable responseObject) {

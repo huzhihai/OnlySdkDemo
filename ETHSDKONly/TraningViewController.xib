@@ -76,7 +76,7 @@
                         <action selector="tradeBtnAction:" destination="-1" eventType="touchUpInside" id="3f7-O0-PL3"/>
                     </connections>
                 </button>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UoN-Fu-jwy">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1e-08" minValue="0.0" maxValue="0.001" translatesAutoresizingMaskIntoConstraints="NO" id="UoN-Fu-jwy">
                     <rect key="frame" x="48" y="392.5" width="318" height="31"/>
                     <connections>
                         <action selector="poundgeaAction:" destination="-1" eventType="valueChanged" id="3rB-n1-ESD"/>

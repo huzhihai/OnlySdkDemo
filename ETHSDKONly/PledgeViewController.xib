@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PledgeViewController">
             <connections>
                 <outlet property="addressTF" destination="f9O-2M-4AG" id="YjP-dO-nxi"/>
+                <outlet property="noce" destination="bY2-hY-mll" id="XjD-L0-WyY"/>
                 <outlet property="poundageLab" destination="wSd-7S-hAM" id="T6H-P8-AdC"/>
                 <outlet property="priceTF" destination="eUR-VX-86W" id="dQf-9O-v1V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UZ-4B-i1j">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UZ-4B-i1j">
                     <rect key="frame" x="50" y="144" width="35" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -33,7 +34,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-VX-86W">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-VX-86W">
                     <rect key="frame" x="113" y="137.5" width="281" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="RrJ-DX-t4N"/>
@@ -42,7 +43,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9O-2M-4AG">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a7ed1688bb395bb358eedd2d80078137ca17fdde" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9O-2M-4AG">
                     <rect key="frame" x="113" y="218.5" width="281" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="HLA-bU-3Bv"/>
@@ -75,7 +76,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.0010000000474974513" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mio-hj-LM1">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1e-08" minValue="0.0" maxValue="0.001" translatesAutoresizingMaskIntoConstraints="NO" id="Mio-hj-LM1">
                     <rect key="frame" x="48" y="403" width="318" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Ujp-P9-jz2"/>
