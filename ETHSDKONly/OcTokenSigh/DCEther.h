@@ -63,15 +63,14 @@
 /*
  交易
  privateKey 钱包的私钥
- publicKey  钱包的公钥
- addrss     钱包的地址
+
  array 包裹字典 （字典包含price  跟 address）,对方的信息
  @[{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":@"0.01"}]
  
  普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账
  */
 
-+ (void)dc_transferArray:(NSArray *)array privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey address:(NSString *)address block:(void(^)(BOOL isuc))block;
++ (void)dc_transferArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(NSString *)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block;
 /*
  查询接口
  address  钱包的地址
@@ -85,7 +84,7 @@
  address 钱包的地址
  普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账
  */
-+ (void)dc_interestsActionWithPrice:(NSString *)price privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey address:(NSString *)address block:(void(^)(BOOL isuc))block;
++ (void)dc_interestsActionWithPrice:(NSString *)price privateKey:(NSString *)privateKey outnoce:(NSString *)outnoce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block;
 /*
  质押
  
@@ -98,7 +97,7 @@
  
  普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账
  */
-+ (void)dc_pledgeActionNetworkWithArray:(NSArray *)array privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey address:(NSString *)address block:(void(^)(BOOL isuc))block;
++ (void)dc_pledgeActionNetworkWithArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(NSString *)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block;
 
 @end
 
