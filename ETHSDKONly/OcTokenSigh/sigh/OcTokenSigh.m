@@ -89,6 +89,7 @@
     resultAllString = [resultAllString stringByAppendingFormat:@"%@",sighData246sign];
 //    NSLog(@"%@",resultAllString);
     return resultAllString;
+    
 }
 /*
  质押
