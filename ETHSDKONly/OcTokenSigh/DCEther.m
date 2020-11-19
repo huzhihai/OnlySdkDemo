@@ -144,17 +144,16 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
 @[{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":@"0.01"}]
  
 */
-+ (void)transArray:(NSArray *)array ActionTypeNum:(int)actionTypeNum outnoce:(NSString *)outnoce poundage:(NSString *)poundage privateKey:(NSString *)privateKey address:(NSString *)address publicKey:(NSString *)publicKey  block:(void(^)(BOOL isuc))block{
++ (void)transArray:(NSArray *)array ActionTypeNum:(int)actionTypeNum outnoce:(NSString *)outnoce poundage:(NSString *)poundage privateKey:(NSString *)privateKey address:(NSString *)address publicKey:(NSString *)publicKey  block:(void(^)(BOOL isuc,id  _Nullable responseObject))block{
     if (privateKey.length==0||array.count==0) {
-        block(NO);
+        block(NO,@"");
         return;
     }
-   
-    
+    // 乘一个亿
+    poundage = kYdecimalNum(poundage);
     dispatch_group_t disgroup = dispatch_group_create();
     static NSString *poundages = @"0";
     static NSString *noce = @"0";
-    
     dispatch_group_enter(disgroup);
     if (outnoce.integerValue>0) {
         noce = outnoce;
@@ -204,6 +203,7 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
                     dispatch_group_leave(disgroup);
                 }
             }else{
+                
                 poundages = poundage;
                 dispatch_group_leave(disgroup);
             }
@@ -211,7 +211,6 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
             dispatch_group_leave(disgroup);
         }];
     }
-
     ///  进行交易
     dispatch_group_notify(disgroup, dispatch_get_main_queue(), ^{
         int lockTimer = [[NSDate getNowTimeTimestamp] intValue];
@@ -220,7 +219,7 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
         NSLog(@"%@",message);
         NSDictionary *dic = @{@"action":message};
         if ([message containsString:@"传入key有误"]) {
-            block(NO);
+            block(NO,@"");
             return;
         }
         [self postWithUrlString:kreceiveActionAPI2 parameters:dic success:^(id  _Nullable responseObject) {
@@ -228,12 +227,12 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
             NSString *code = [NSString stringWithFormat:@"%@",dics[@"code"]];
             NSLog(@"%@",responseObject);
             if (code.intValue==200) {
-                block(YES);
+                block(YES,responseObject);
             }else{
-                block(NO);
+                block(NO,@"");
             }
         } failure:^(NSError * _Nonnull error) {
-            block(NO);
+            block(NO,@"");
         }];
     });
 }
@@ -242,16 +241,16 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
     NSString *strUrl = [address stringByReplacingOccurrencesOfString:@"oc"withString:@""];
            NSDictionary *dic = @{@"address":strUrl,@"type":@"2"};
     [self postWithUrlString:kgetAcountMsg parameters:dic success:^(id  _Nullable responseObject) {
-        NSArray *infoArray;
-        NSDictionary *dic = responseObject;
-        infoArray = dic[@"record"];
-        NSDictionary *dicInfo;
-        if (infoArray.count>0) {
-            dicInfo = infoArray[0];
-        }
-        NSString *noce = [NSString stringWithFormat:@"%@",dicInfo[@"noce"]];
-        NSString *rightValue = [NSString stringWithFormat:@"%@",dicInfo[@"rightValue"]];
-        NSString *qrM = kYdecimalNum(@"5000");
+//        NSArray *infoArray;
+//        NSDictionary *dic = responseObject;
+//        infoArray = dic[@"record"];
+//        NSDictionary *dicInfo;
+//        if (infoArray.count>0) {
+//            dicInfo = infoArray[0];
+//        }
+//        NSString *noce = [NSString stringWithFormat:@"%@",dicInfo[@"noce"]];
+//        NSString *rightValue = [NSString stringWithFormat:@"%@",dicInfo[@"rightValue"]];
+//        NSString *qrM = kYdecimalNum(@"5000");
         successBlock(responseObject);
     } failure:^(NSError * _Nonnull error) {
         failureBlock(error);
@@ -286,7 +285,7 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
     }];
 }
 ///  交易
-+ (void)dc_transferArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(NSString *)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block{
++ (void)dc_transferArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(int)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc,id  _Nullable responseObject))block{
     NSData *data = [self hexStringToData:privateKey];
     NSData *pulData =  [OcSecp256k1 generatePublicKeyWithPrivateKey:data compression:YES];
     NSString *publicKey = [self dataToHexStringWithData:pulData];
@@ -295,12 +294,20 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
     NSData *hash256 = [publicData SHA256Hash];
     NSData *hash160 = [hash256 RIPEMD160Hash];
     NSString *address = [self dataToHexStringWithData:hash160];
-    [self transArray:array ActionTypeNum:1 outnoce:noce poundage:poundage privateKey:privateKey address:address publicKey:publicKey block:^(BOOL isuc) {
-           block(isuc);
+    
+    if (noce==0) {
+        noce = 0;
+    }
+    if (poundage.length==0||poundage.intValue==0) {
+        poundage = @"0";
+    }
+    
+    [self transArray:array ActionTypeNum:1 outnoce:[NSString stringWithFormat:@"%d",noce] poundage:poundage privateKey:privateKey address:address publicKey:publicKey block:^(BOOL isuc,id  _Nullable responseObject) {
+           block(isuc,responseObject);
        }];
 }
 /// 开通权益
-+ (void)dc_interestsActionWithPrice:(NSString *)price privateKey:(NSString *)privateKey outnoce:(NSString *)outnoce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block{
++ (void)dc_interestsActionWithPrice:(NSString *)price privateKey:(NSString *)privateKey noce:(int)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc,id  _Nullable responseObject))block{
     
    NSData *data = [self hexStringToData:privateKey];
    NSData *pulData =  [OcSecp256k1 generatePublicKeyWithPrivateKey:data compression:YES];
@@ -313,13 +320,19 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
    
    NSString *strUrl = [address stringByReplacingOccurrencesOfString:@"oc"withString:@""];
          NSArray *array = @[@{@"address":strUrl.length==0?@"":strUrl.length>0?address:@"",@"price":price.length==0?@"0":price}];
-    [self transArray:array ActionTypeNum:4 outnoce:outnoce poundage:poundage privateKey:privateKey address:address publicKey:publicKey block:^(BOOL isuc) {
-        block(isuc);
+    if (noce==0) {
+        noce = 0;
+    }
+    if (poundage.length==0||poundage.intValue==0) {
+        poundage = @"0";
+    }
+    [self transArray:array ActionTypeNum:4 outnoce:[NSString stringWithFormat:@"%d",noce] poundage:poundage privateKey:privateKey address:address publicKey:publicKey block:^(BOOL isuc,id  _Nullable responseObject) {
+        block(isuc,responseObject);
     }];
 }
 
 /// 质押
-+ (void)dc_pledgeActionNetworkWithArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(NSString *)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block{
++ (void)dc_pledgeActionNetworkWithArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(int)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc,id  _Nullable responseObject))block{
     
     NSData *data = [self hexStringToData:privateKey];
     NSData *pulData =  [OcSecp256k1 generatePublicKeyWithPrivateKey:data compression:YES];
@@ -329,9 +342,14 @@ array 包裹字典 （字典包含price  跟 address）,对方的信息
     NSData *hash256 = [publicData SHA256Hash];
     NSData *hash160 = [hash256 RIPEMD160Hash];
     NSString *address = [self dataToHexStringWithData:hash160];
-    
-    [self transArray:array ActionTypeNum:9 outnoce:noce poundage:poundage privateKey:privateKey address:address publicKey:publicKey block:^(BOOL isuc) {
-           block(isuc);
+    if (noce==0) {
+        noce = 0;
+    }
+    if (poundage.length==0||poundage.intValue==0) {
+        poundage = @"0";
+    }
+    [self transArray:array ActionTypeNum:9 outnoce:[NSString stringWithFormat:@"%d",noce] poundage:poundage privateKey:privateKey address:address publicKey:publicKey block:^(BOOL isuc,id  _Nullable responseObject) {
+           block(isuc,responseObject);
        }];
 }
 

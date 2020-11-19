@@ -70,7 +70,7 @@
  普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账
  */
 
-+ (void)dc_transferArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(NSString *)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block;
++ (void)dc_transferArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(int)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc,id  _Nullable responseObject))block;
 /*
  查询接口
  address  钱包的地址
@@ -79,25 +79,25 @@
 /*
  开通权益
  price 开通权益的金额
- privateKey 钱包的私钥
- publicKey 钱包的公钥
  address 钱包的地址
+ 
  普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账
  */
-+ (void)dc_interestsActionWithPrice:(NSString *)price privateKey:(NSString *)privateKey outnoce:(NSString *)outnoce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block;
++ (void)dc_interestsActionWithPrice:(NSString *)price privateKey:(NSString *)privateKey noce:(int)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc,id  _Nullable responseObject))block;
 /*
  质押
  
  array  包裹字典 （字典包含price  跟 address）
  @[{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":@"0.01"}]
- 
- privateKey 钱包的私钥
- publicKey 钱包的公钥
- address 钱包的地址
- 
+  privateKey 钱包的私钥
+
  普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账
  */
-+ (void)dc_pledgeActionNetworkWithArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(NSString *)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc))block;
++ (void)dc_pledgeActionNetworkWithArray:(NSArray *)array privateKey:(NSString *)privateKey noce:(int)noce poundage:(NSString *)poundage block:(void(^)(BOOL isuc,id  _Nullable responseObject))block;
+/*
+ 查询手续费
+ */
++ (void)getPoundageDataSuccess:(void(^)(id  _Nullable responseObject))successBlock failure:(void(^)(NSError * _Nonnull error))failureBlock;
 
 @end
 
