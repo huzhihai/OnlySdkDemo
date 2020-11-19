@@ -11,7 +11,8 @@
 @interface PledgeViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *priceTF;
 @property (weak, nonatomic) IBOutlet UITextField *addressTF;
-
+@property (weak, nonatomic) IBOutlet UILabel *poundageLab;
+@property (nonatomic, copy) NSString *pundege;
 @end
 
 @implementation PledgeViewController
@@ -19,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.pundege = @"0.001";
+    self.poundageLab.text = [NSString stringWithFormat:@"手续费：%@ only",self.pundege];
+}
+- (IBAction)poundageAction:(UISlider *)sender {
+    float value = sender.value;
+    self.pundege = [NSString stringWithFormat:@"%f only",value];
+    self.poundageLab.text = [NSString stringWithFormat:@"手续费：%@",self.pundege];
 }
 - (IBAction)pledgeBtnAction:(UIButton *)sender {
 }
