@@ -16,7 +16,6 @@
 
 @property (nonatomic, copy) NSString *pundege;
 @property (weak, nonatomic) IBOutlet UIButton *tranBtn;
-@property (weak, nonatomic) IBOutlet UITextView *resutlTexView;
 @property (weak, nonatomic) IBOutlet UILabel *poundageLab;
 
 @end

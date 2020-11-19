@@ -15,7 +15,6 @@
                 <outlet property="poundageLab" destination="GPK-ma-8Oe" id="iCT-RV-OwS"/>
                 <outlet property="priKeyTF" destination="tca-6p-cuW" id="lE4-rq-V8I"/>
                 <outlet property="priceTF" destination="BjY-MO-y4G" id="doa-Ji-LZI"/>
-                <outlet property="resutlTexView" destination="gId-OT-A14" id="yKG-C5-ZWS"/>
                 <outlet property="tranBtn" destination="uTh-ZG-e4c" id="zzY-mv-20I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -100,13 +99,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gId-OT-A14">
-                    <rect key="frame" x="20" y="585" width="366" height="258"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -126,8 +118,6 @@
                 <constraint firstItem="2Yz-uf-mfd" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="RW1-Fr-ifF"/>
                 <constraint firstItem="UoN-Fu-jwy" firstAttribute="top" secondItem="tca-6p-cuW" secondAttribute="bottom" constant="50" id="Rcb-Lj-kMx"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="uTh-ZG-e4c" secondAttribute="trailing" constant="100" id="SPp-pJ-mrW"/>
-                <constraint firstItem="gId-OT-A14" firstAttribute="top" secondItem="uTh-ZG-e4c" secondAttribute="bottom" constant="43.5" id="To2-CZ-Rm1"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="gId-OT-A14" secondAttribute="bottom" constant="19" id="UNb-gc-XEM"/>
                 <constraint firstItem="uTh-ZG-e4c" firstAttribute="top" secondItem="GPK-ma-8Oe" secondAttribute="bottom" constant="50" id="Y7A-NK-uaF"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="IBg-ge-Cmi" secondAttribute="trailing" constant="20" id="bZg-zf-yca"/>
                 <constraint firstItem="tca-6p-cuW" firstAttribute="trailing" secondItem="uUl-vc-DVF" secondAttribute="trailing" id="cwV-Qf-OdD"/>
@@ -138,9 +128,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="BjY-MO-y4G" secondAttribute="trailing" constant="20" id="kpS-hC-RwE"/>
                 <constraint firstItem="BjY-MO-y4G" firstAttribute="centerY" secondItem="6qw-zf-BFP" secondAttribute="centerY" id="lQ1-CN-Msk"/>
                 <constraint firstItem="Sla-Sa-0Ug" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="46" id="q0y-Tg-cRf"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="gId-OT-A14" secondAttribute="trailing" constant="28" id="qvQ-Qg-dK9"/>
                 <constraint firstItem="2Yz-uf-mfd" firstAttribute="top" secondItem="Sla-Sa-0Ug" secondAttribute="bottom" constant="58" id="qxi-5B-bW4"/>
-                <constraint firstItem="gId-OT-A14" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="tDT-zO-lcL"/>
                 <constraint firstItem="tca-6p-cuW" firstAttribute="leading" secondItem="uUl-vc-DVF" secondAttribute="leading" id="x1t-uo-ZER"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
