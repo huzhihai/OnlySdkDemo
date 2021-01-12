@@ -1,6 +1,0 @@
-module CB_RIPEMD {
-  umbrella header "CB_RIPEMD-umbrella.h"
-
-  export *
-  module * { export * }
-}

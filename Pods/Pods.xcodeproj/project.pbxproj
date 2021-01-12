@@ -6,195 +6,22 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 59B3808868C910740FB5DD639927F01D /* Build configuration list for PBXAggregateTarget "OpenSSL-Universal" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = "OpenSSL-Universal";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		1C7F62982D0BBC18937447299FBCD155 /* LEB128-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD59FE6A5F654F03813B602E6750778B /* LEB128-dummy.m */; };
-		1E4442B5E10E4D19B9C5F43FD95D66A6 /* CB_RIPEMD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EABCB240B34D5DFBCDF1884B285E5AE0 /* CB_RIPEMD-dummy.m */; };
-		5D7760B0B6AA374BCF5CA5DDAF1E8005 /* NSData+Hashing.h in Headers */ = {isa = PBXBuildFile; fileRef = FE5E167719CD4094F5720EC3648EC6EC /* NSData+Hashing.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6B1BBCBDFF5BB25C12970DDEB94C6618 /* Pods-ETHSDKONly-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3829027A0F6C5324E048B7B183CF91 /* Pods-ETHSDKONly-dummy.m */; };
-		73CDA84564C622842B66CF41C353882C /* ByteBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2E096441E09AC3446BD66C1A0A357 /* ByteBuffer.swift */; };
-		7E138E2012D52A68277ECAA744A25514 /* CB_RIPEMD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B90A79AE162FFF0C048ED3E189EE6AC /* CB_RIPEMD-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		912279B2B788C85A9D70DD177D2942DD /* LEB128-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B66735509CAFB562EB381AE643FCD07 /* LEB128-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B6F997D95B480BC854D08DDDBE81FDF4 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B00A4DF88BD457A0838CB4A414FC6E /* Foundation.swift */; };
-		C2326805A460BCD9C4FB3400ADDE8384 /* Pods-ETHSDKONly-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CE1DE9DFC769FC204D413E8D6F05B5 /* Pods-ETHSDKONly-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D5EC07DAFA57082705937E13E981D50A /* NSData+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C176CBA8AFAA7B41B3752AD0B58C60 /* NSData+Hashing.m */; };
-		DD4E64365127A41132B2252758F1909A /* LEB128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FB62020B6322E472482B43AF871092 /* LEB128.swift */; };
+		403495F80ECB09A78A89BCF3AA1A5CE2 /* Pods-ETHSDKONly-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFC4D8BF7F1EE6593B3FA4DD64232D7 /* Pods-ETHSDKONly-dummy.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		17A3EFED9083E3D0437DED5BEC976DA5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B9ED5194E665042005069EF06C82A050;
-			remoteInfo = "OpenSSL-Universal";
-		};
-		7B2BB57F8E8BB34F6A48E5B47DA1E1A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 12D9AF3C7CC5F9510E791ECE29A005F6;
-			remoteInfo = CB_RIPEMD;
-		};
-		CE39BB6EA734C546897D301137E3473C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B9ED5194E665042005069EF06C82A050;
-			remoteInfo = "OpenSSL-Universal";
-		};
-		D6DD3AFF5412EDE73ED27B5C05B87375 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 03E414DFBE31BC560DBE997CB6E753D0;
-			remoteInfo = LEB128;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		03F240208611A7FDA69773EC91AA0843 /* ssl3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl3.h; path = ios/include/openssl/ssl3.h; sourceTree = "<group>"; };
-		07C3695E983117B66E4B6A3E20456333 /* CB_RIPEMD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CB_RIPEMD.release.xcconfig; sourceTree = "<group>"; };
-		0CAA6D783D974FB951C55C9B3838407B /* pkcs12.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pkcs12.h; path = ios/include/openssl/pkcs12.h; sourceTree = "<group>"; };
-		0D7ABDDD2CD5E24976B5A955B0BAF47F /* crypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto.h; path = ios/include/openssl/crypto.h; sourceTree = "<group>"; };
-		0EFDC34313FB4F976605E92D50B4ABCE /* idea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = idea.h; path = ios/include/openssl/idea.h; sourceTree = "<group>"; };
-		112F29B897E1BBA2ABD4FFAEA796BEB4 /* opensslv.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opensslv.h; path = ios/include/openssl/opensslv.h; sourceTree = "<group>"; };
-		115D2D3E84F449C7B706ABFA3D9FCFA8 /* md4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = md4.h; path = ios/include/openssl/md4.h; sourceTree = "<group>"; };
-		118529D8758C112CA7FB966A77BAC54C /* opensslconf-x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-x86_64.h"; path = "ios/include/openssl/opensslconf-x86_64.h"; sourceTree = "<group>"; };
-		156B206F7103D5DF5497789D0F0AAD4F /* asn1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1.h; path = ios/include/openssl/asn1.h; sourceTree = "<group>"; };
-		1686A4E2CF7242C7ABB57CAA1AD4A727 /* ebcdic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ebcdic.h; path = ios/include/openssl/ebcdic.h; sourceTree = "<group>"; };
-		1A4A8387BF4AC741C8DEE55D95E629EE /* LEB128.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LEB128.release.xcconfig; sourceTree = "<group>"; };
-		1E9C63301891C6CA6C9AC16B1F852E15 /* LEB128.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LEB128.debug.xcconfig; sourceTree = "<group>"; };
-		20C6829682D3A8D115D753C8AA2A8AEC /* pem2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pem2.h; path = ios/include/openssl/pem2.h; sourceTree = "<group>"; };
-		21C7C242840EAAE39266A57CC11495B8 /* asn1t.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1t.h; path = ios/include/openssl/asn1t.h; sourceTree = "<group>"; };
-		25C3B844ED21C5EE8ACF5768DD0490D6 /* camellia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = camellia.h; path = ios/include/openssl/camellia.h; sourceTree = "<group>"; };
-		25E7DFA2401F831878F04731DE5C6957 /* seed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = seed.h; path = ios/include/openssl/seed.h; sourceTree = "<group>"; };
-		271458C61B7D8BB8FF3F0DFBC1A77D37 /* rc2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rc2.h; path = ios/include/openssl/rc2.h; sourceTree = "<group>"; };
-		27C0E0D9D432A2296F88FACB5F7D70E4 /* srp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = srp.h; path = ios/include/openssl/srp.h; sourceTree = "<group>"; };
-		2814AAB402CC0F23050BAFA515BCAED3 /* opensslconf-armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-armv7.h"; path = "ios/include/openssl/opensslconf-armv7.h"; sourceTree = "<group>"; };
-		28266EF3532896203CC72B19F163CCFF /* engine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = engine.h; path = ios/include/openssl/engine.h; sourceTree = "<group>"; };
-		2B66735509CAFB562EB381AE643FCD07 /* LEB128-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LEB128-umbrella.h"; sourceTree = "<group>"; };
-		2C57EF8A9E045BA8F968F480AB05480D /* LEB128.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LEB128.modulemap; sourceTree = "<group>"; };
-		2E8481C54B6212E7F65BAD754EFF6D19 /* txt_db.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = txt_db.h; path = ios/include/openssl/txt_db.h; sourceTree = "<group>"; };
-		2F9EE1F8EDC9D075730AA076B202D775 /* comp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = comp.h; path = ios/include/openssl/comp.h; sourceTree = "<group>"; };
-		304964DD2C70FE50351BD44AD63620A7 /* dsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dsa.h; path = ios/include/openssl/dsa.h; sourceTree = "<group>"; };
-		35FDBDA3E1D8C4F67EEBAAD3C988F07F /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = ios/lib/libcrypto.a; sourceTree = "<group>"; };
-		37946526C8123C3219C057E611005A3C /* Pods-ETHSDKONly-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ETHSDKONly-acknowledgements.markdown"; sourceTree = "<group>"; };
-		37C176CBA8AFAA7B41B3752AD0B58C60 /* NSData+Hashing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+Hashing.m"; path = "CB_RIPEMD/RIPEMD/NSData+Hashing.m"; sourceTree = "<group>"; };
-		38E0FFE03A7101DC6B2E5C9903887CE4 /* kssl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = kssl.h; path = ios/include/openssl/kssl.h; sourceTree = "<group>"; };
-		3B06CE6D4B265310A0B6D800EC7C36DB /* pkcs7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pkcs7.h; path = ios/include/openssl/pkcs7.h; sourceTree = "<group>"; };
-		3B90A79AE162FFF0C048ED3E189EE6AC /* CB_RIPEMD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CB_RIPEMD-umbrella.h"; sourceTree = "<group>"; };
-		3E04B5B10716C046F1DEC02979CA5455 /* conf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = conf.h; path = ios/include/openssl/conf.h; sourceTree = "<group>"; };
-		3E0B16941F0EA991D56E132EFE7FD65E /* CB_RIPEMD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CB_RIPEMD.debug.xcconfig; sourceTree = "<group>"; };
-		40C56F88FCF29B65628B7187F06ACCDF /* dtls1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dtls1.h; path = ios/include/openssl/dtls1.h; sourceTree = "<group>"; };
-		4245B45284D9D9F9A0358AF02AB74F2B /* ossl_typ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ossl_typ.h; path = ios/include/openssl/ossl_typ.h; sourceTree = "<group>"; };
-		46386548BEE51EBBF00D3783DD8343A3 /* symhacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = symhacks.h; path = ios/include/openssl/symhacks.h; sourceTree = "<group>"; };
-		4643DAF7E831E7D7A50F98BFD13BC76D /* Pods-ETHSDKONly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ETHSDKONly.debug.xcconfig"; sourceTree = "<group>"; };
-		48EE00BDFE2312CFA688A9F55DCC3A80 /* evp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = evp.h; path = ios/include/openssl/evp.h; sourceTree = "<group>"; };
-		4ED20064DEB1B377274081CF024AE9F7 /* des.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = des.h; path = ios/include/openssl/des.h; sourceTree = "<group>"; };
-		5048B9456B583F5592D9E4F27711A5B0 /* obj_mac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = obj_mac.h; path = ios/include/openssl/obj_mac.h; sourceTree = "<group>"; };
-		50FB62020B6322E472482B43AF871092 /* LEB128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LEB128.swift; path = Sources/LEB128.swift; sourceTree = "<group>"; };
-		5390C1B9A13DC1E921ED22D0A2861E48 /* opensslconf-i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-i386.h"; path = "ios/include/openssl/opensslconf-i386.h"; sourceTree = "<group>"; };
-		5AE1DE180748A4F2803154A12DF24720 /* ocsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ocsp.h; path = ios/include/openssl/ocsp.h; sourceTree = "<group>"; };
-		60975F6FF290194B15BE4D1379E06218 /* conf_api.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = conf_api.h; path = ios/include/openssl/conf_api.h; sourceTree = "<group>"; };
-		62CE1DE9DFC769FC204D413E8D6F05B5 /* Pods-ETHSDKONly-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ETHSDKONly-umbrella.h"; sourceTree = "<group>"; };
+		1222692A02AFCFDD80A6E71608417846 /* Pods-ETHSDKONly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ETHSDKONly.debug.xcconfig"; sourceTree = "<group>"; };
+		3BDCDF5B500714BDC672F8CC933B54B2 /* Pods-ETHSDKONly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ETHSDKONly.release.xcconfig"; sourceTree = "<group>"; };
 		66B49CBE648CC8651F807274BEE1399D /* libPods-ETHSDKONly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ETHSDKONly.a"; path = "libPods-ETHSDKONly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		68412EA81D4332677FD8840DA13214E0 /* cast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cast.h; path = ios/include/openssl/cast.h; sourceTree = "<group>"; };
-		686FB123D55D0012435F0A5F88820439 /* safestack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = safestack.h; path = ios/include/openssl/safestack.h; sourceTree = "<group>"; };
-		691D7E9BE9D81762F238E87FEB303F79 /* whrlpool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = whrlpool.h; path = ios/include/openssl/whrlpool.h; sourceTree = "<group>"; };
-		6A21F75AAA953BB3FDC925BE67C8C4EF /* ts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ts.h; path = ios/include/openssl/ts.h; sourceTree = "<group>"; };
-		6AF91868E5E5184BE49ABAA1DEE88240 /* ui.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ui.h; path = ios/include/openssl/ui.h; sourceTree = "<group>"; };
-		6CB5278D990FACA8CD86A856F81CFCB6 /* Pods-ETHSDKONly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ETHSDKONly.release.xcconfig"; sourceTree = "<group>"; };
-		6E3829027A0F6C5324E048B7B183CF91 /* Pods-ETHSDKONly-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ETHSDKONly-dummy.m"; sourceTree = "<group>"; };
-		6F32DA7131F9775DD52A3E7E45764A23 /* stack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stack.h; path = ios/include/openssl/stack.h; sourceTree = "<group>"; };
-		7044E15844AF8EF12EFE1EB6F3FAC621 /* ecdh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecdh.h; path = ios/include/openssl/ecdh.h; sourceTree = "<group>"; };
-		718E19E7CA4C0F9F0563154BA70A264B /* libCB_RIPEMD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCB_RIPEMD.a; path = libCB_RIPEMD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		733C9793E85D65BFDD56D90AE1420E6E /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = ios/include/openssl/hmac.h; sourceTree = "<group>"; };
-		7C385C6B1E796351C7AFE3DA7D098349 /* CB_RIPEMD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CB_RIPEMD.modulemap; sourceTree = "<group>"; };
-		7C6970CBD6C511763ACB43431BE0D418 /* libLEB128.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libLEB128.a; path = libLEB128.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D71C221B01B1F4AF3F692CDCC837E4C /* opensslconf-arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-arm64.h"; path = "ios/include/openssl/opensslconf-arm64.h"; sourceTree = "<group>"; };
-		8B30B31D30EDCC753CB4BA18EE788DB5 /* Pods-ETHSDKONly.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ETHSDKONly.modulemap"; sourceTree = "<group>"; };
-		8DC3AED7D9EF83F4F9B2422ABDCAD577 /* srtp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = srtp.h; path = ios/include/openssl/srtp.h; sourceTree = "<group>"; };
-		8E784D1419CB83C405D73FFFC3294CC8 /* x509.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509.h; path = ios/include/openssl/x509.h; sourceTree = "<group>"; };
-		91878A68DD8AB981EB2FEEDBB7568AB1 /* CB_RIPEMD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CB_RIPEMD-prefix.pch"; sourceTree = "<group>"; };
-		91D74B2916E598CA853B02B4F99DA33B /* modes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = modes.h; path = ios/include/openssl/modes.h; sourceTree = "<group>"; };
-		951748FD17ABF6733D164083AF14A56A /* pqueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pqueue.h; path = ios/include/openssl/pqueue.h; sourceTree = "<group>"; };
-		969987F1D07603CE8A00159ECCE61B83 /* bio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bio.h; path = ios/include/openssl/bio.h; sourceTree = "<group>"; };
-		9927D4D7EE19E3FC164FA66515BA02E2 /* cms.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cms.h; path = ios/include/openssl/cms.h; sourceTree = "<group>"; };
-		99966F095B4F9830FBC04DFC61FCEEFD /* ssl2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl2.h; path = ios/include/openssl/ssl2.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E643E4EC8DECA99ED4356252A3AE176 /* rc4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rc4.h; path = ios/include/openssl/rc4.h; sourceTree = "<group>"; };
-		9E8283CC78864683B17E354F9522FEC0 /* dso.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dso.h; path = ios/include/openssl/dso.h; sourceTree = "<group>"; };
-		A58D1759A8B0C888C2E08669A2CD05FB /* Pods-ETHSDKONly-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ETHSDKONly-acknowledgements.plist"; sourceTree = "<group>"; };
-		A72468B8B7EA526800DAA0A817E1F41E /* rsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rsa.h; path = ios/include/openssl/rsa.h; sourceTree = "<group>"; };
-		A7A0CAAF91D4535B3452E761A1DDC47E /* dh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dh.h; path = ios/include/openssl/dh.h; sourceTree = "<group>"; };
-		AD18CE0D4A3448FCA5E4F43B2DEFB0A7 /* asn1_mac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1_mac.h; path = ios/include/openssl/asn1_mac.h; sourceTree = "<group>"; };
-		ADFA7B936BAE1EE13D2BCBA5CBFFC4D2 /* x509v3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509v3.h; path = ios/include/openssl/x509v3.h; sourceTree = "<group>"; };
-		B1B00A4DF88BD457A0838CB4A414FC6E /* Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Foundation.swift; path = Sources/Foundation.swift; sourceTree = "<group>"; };
-		B1E078B118A505C464B75DCF169120EB /* rand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rand.h; path = ios/include/openssl/rand.h; sourceTree = "<group>"; };
-		B25E416E6B3160CE230B8107558DB655 /* md5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = md5.h; path = ios/include/openssl/md5.h; sourceTree = "<group>"; };
-		B291875CD03AB04537A3D460FDEB1CCF /* ripemd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ripemd.h; path = ios/include/openssl/ripemd.h; sourceTree = "<group>"; };
-		B2D2E096441E09AC3446BD66C1A0A357 /* ByteBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ByteBuffer.swift; path = Sources/ByteBuffer.swift; sourceTree = "<group>"; };
-		BD0FEBBC0BDC12CC93AFE028E14FAEF5 /* ec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ec.h; path = ios/include/openssl/ec.h; sourceTree = "<group>"; };
-		BD8771A03939986E31CCE5DCA95BB38C /* LEB128-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LEB128-prefix.pch"; sourceTree = "<group>"; };
-		BECE75A71882A19DDD0C1C3E19D79C68 /* cmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmac.h; path = ios/include/openssl/cmac.h; sourceTree = "<group>"; };
-		BF12B984F3CE3007E6864E9565B8019F /* ssl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl.h; path = ios/include/openssl/ssl.h; sourceTree = "<group>"; };
-		BFB872E5DA33908000C759830039D660 /* sha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha.h; path = ios/include/openssl/sha.h; sourceTree = "<group>"; };
-		C04FB21A4E823F07C6750CB8E487B209 /* des_old.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = des_old.h; path = ios/include/openssl/des_old.h; sourceTree = "<group>"; };
-		C3DBEF828D2C9445678DECA94B5CE1E4 /* ecdsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecdsa.h; path = ios/include/openssl/ecdsa.h; sourceTree = "<group>"; };
-		C7DFDFF115800B64A4121A79C93C634A /* ssl23.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl23.h; path = ios/include/openssl/ssl23.h; sourceTree = "<group>"; };
-		CAD5F800823498F2FBB7FF983EBF0A0F /* blowfish.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = blowfish.h; path = ios/include/openssl/blowfish.h; sourceTree = "<group>"; };
-		CEC1A26F6744B0A185E35444F2DD7392 /* tls1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tls1.h; path = ios/include/openssl/tls1.h; sourceTree = "<group>"; };
-		DD34CB58B4265B2740E552A890CB7193 /* ui_compat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ui_compat.h; path = ios/include/openssl/ui_compat.h; sourceTree = "<group>"; };
-		DD59FE6A5F654F03813B602E6750778B /* LEB128-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LEB128-dummy.m"; sourceTree = "<group>"; };
-		DD89F126F4799B4B8E1A17404CB6C0A9 /* bn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bn.h; path = ios/include/openssl/bn.h; sourceTree = "<group>"; };
-		E02BF2547C1D8DD7A96E80260FEDAA40 /* OpenSSL-Universal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OpenSSL-Universal.debug.xcconfig"; sourceTree = "<group>"; };
-		E0CB753520018F97EF26DAC5C6FED53A /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = ios/lib/libssl.a; sourceTree = "<group>"; };
-		E14F9AF822561951146C7850F2560BDF /* opensslconf-armv7s.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-armv7s.h"; path = "ios/include/openssl/opensslconf-armv7s.h"; sourceTree = "<group>"; };
-		E1AA654C95E22B6CFAB4288B53106D99 /* opensslconf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opensslconf.h; path = ios/include/openssl/opensslconf.h; sourceTree = "<group>"; };
-		E4647FB6AB182E510124D20A86A44ED2 /* OpenSSL-Universal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OpenSSL-Universal.release.xcconfig"; sourceTree = "<group>"; };
-		E5BA1EE855F4ECC4032EE7B7417E8C90 /* e_os2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = e_os2.h; path = ios/include/openssl/e_os2.h; sourceTree = "<group>"; };
-		EABCB240B34D5DFBCDF1884B285E5AE0 /* CB_RIPEMD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CB_RIPEMD-dummy.m"; sourceTree = "<group>"; };
-		EBD7F654E2E5A2DE087FEE6E8C654AD2 /* x509_vfy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509_vfy.h; path = ios/include/openssl/x509_vfy.h; sourceTree = "<group>"; };
-		EDD0E06116EBF1F4E109F5ECF72CBD7A /* objects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = objects.h; path = ios/include/openssl/objects.h; sourceTree = "<group>"; };
-		EF391C83A4571563239FAD0AC67B530E /* err.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = err.h; path = ios/include/openssl/err.h; sourceTree = "<group>"; };
-		F4186035667F074C73C15F780D1731F8 /* lhash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lhash.h; path = ios/include/openssl/lhash.h; sourceTree = "<group>"; };
-		F44930E25009593BC55EB261E6654FCF /* krb5_asn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = krb5_asn.h; path = ios/include/openssl/krb5_asn.h; sourceTree = "<group>"; };
-		F5CB0D48A9060DC7F0B0935CBD0E3E6C /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = ios/include/openssl/aes.h; sourceTree = "<group>"; };
-		F8EF94D0253E83C93DF07439561E780C /* pem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pem.h; path = ios/include/openssl/pem.h; sourceTree = "<group>"; };
-		FA69A6736623FE4C17C0334D682A12ED /* mdc2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mdc2.h; path = ios/include/openssl/mdc2.h; sourceTree = "<group>"; };
-		FAC2C51046D96551F2D590F307AFA089 /* shim.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = shim.h; path = ios/include/openssl/shim.h; sourceTree = "<group>"; };
-		FC014BBA626E890C86FB868E53D95773 /* buffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = ios/include/openssl/buffer.h; sourceTree = "<group>"; };
-		FE5E167719CD4094F5720EC3648EC6EC /* NSData+Hashing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+Hashing.h"; path = "CB_RIPEMD/RIPEMD/NSData+Hashing.h"; sourceTree = "<group>"; };
+		BFFC4D8BF7F1EE6593B3FA4DD64232D7 /* Pods-ETHSDKONly-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ETHSDKONly-dummy.m"; sourceTree = "<group>"; };
+		C1755E6255DCED28B9234900102FC856 /* Pods-ETHSDKONly-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ETHSDKONly-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F39CA88232E5EDA2F89EF4F52484CB7E /* Pods-ETHSDKONly-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ETHSDKONly-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		522EDF3A9BD78176D5C344A43DE4D394 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68B99E1F193BECEAA149DFAA641300D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6C78F34AAFE44FB69465991030D466DE /* Frameworks */ = {
+		A0A51B744BE5633751FE5E460D478A56 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -204,206 +31,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1DB348F4F13AFA5D5637D2D2278EDD6D /* OpenSSL-Universal */ = {
+		21F005F6C431E94623566D3F292575A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C338825E40C6172A951B499D08E7B63E /* Static */,
-				8358C1ABC674132C547C94BE00DE0C0D /* Support Files */,
-			);
-			name = "OpenSSL-Universal";
-			path = "OpenSSL-Universal";
-			sourceTree = "<group>";
-		};
-		39814514BB6A4049215F41494B36ECCB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7C385C6B1E796351C7AFE3DA7D098349 /* CB_RIPEMD.modulemap */,
-				EABCB240B34D5DFBCDF1884B285E5AE0 /* CB_RIPEMD-dummy.m */,
-				91878A68DD8AB981EB2FEEDBB7568AB1 /* CB_RIPEMD-prefix.pch */,
-				3B90A79AE162FFF0C048ED3E189EE6AC /* CB_RIPEMD-umbrella.h */,
-				3E0B16941F0EA991D56E132EFE7FD65E /* CB_RIPEMD.debug.xcconfig */,
-				07C3695E983117B66E4B6A3E20456333 /* CB_RIPEMD.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/CB_RIPEMD";
-			sourceTree = "<group>";
-		};
-		3C442371D1417FB3106CD8A75A2F53A1 /* CB_RIPEMD */ = {
-			isa = PBXGroup;
-			children = (
-				FE5E167719CD4094F5720EC3648EC6EC /* NSData+Hashing.h */,
-				37C176CBA8AFAA7B41B3752AD0B58C60 /* NSData+Hashing.m */,
-				39814514BB6A4049215F41494B36ECCB /* Support Files */,
-			);
-			name = CB_RIPEMD;
-			path = CB_RIPEMD;
-			sourceTree = "<group>";
-		};
-		415E660C82F17D462BDBB357562971C1 /* Pods-ETHSDKONly */ = {
-			isa = PBXGroup;
-			children = (
-				8B30B31D30EDCC753CB4BA18EE788DB5 /* Pods-ETHSDKONly.modulemap */,
-				37946526C8123C3219C057E611005A3C /* Pods-ETHSDKONly-acknowledgements.markdown */,
-				A58D1759A8B0C888C2E08669A2CD05FB /* Pods-ETHSDKONly-acknowledgements.plist */,
-				6E3829027A0F6C5324E048B7B183CF91 /* Pods-ETHSDKONly-dummy.m */,
-				62CE1DE9DFC769FC204D413E8D6F05B5 /* Pods-ETHSDKONly-umbrella.h */,
-				4643DAF7E831E7D7A50F98BFD13BC76D /* Pods-ETHSDKONly.debug.xcconfig */,
-				6CB5278D990FACA8CD86A856F81CFCB6 /* Pods-ETHSDKONly.release.xcconfig */,
-			);
-			name = "Pods-ETHSDKONly";
-			path = "Target Support Files/Pods-ETHSDKONly";
-			sourceTree = "<group>";
-		};
-		7D1588B9D4FC29F2ED84D85309F76487 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				718E19E7CA4C0F9F0563154BA70A264B /* libCB_RIPEMD.a */,
-				7C6970CBD6C511763ACB43431BE0D418 /* libLEB128.a */,
 				66B49CBE648CC8651F807274BEE1399D /* libPods-ETHSDKONly.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		809A34716AC1F83902EAE5934F0D148E /* LEB128 */ = {
+		2F14EBB9051B522C3F32C3C628F97A7E /* Pods-ETHSDKONly */ = {
 			isa = PBXGroup;
 			children = (
-				B2D2E096441E09AC3446BD66C1A0A357 /* ByteBuffer.swift */,
-				B1B00A4DF88BD457A0838CB4A414FC6E /* Foundation.swift */,
-				50FB62020B6322E472482B43AF871092 /* LEB128.swift */,
-				9E0C1EE1E9397A33614D4DCADDFC2177 /* Support Files */,
+				C1755E6255DCED28B9234900102FC856 /* Pods-ETHSDKONly-acknowledgements.markdown */,
+				F39CA88232E5EDA2F89EF4F52484CB7E /* Pods-ETHSDKONly-acknowledgements.plist */,
+				BFFC4D8BF7F1EE6593B3FA4DD64232D7 /* Pods-ETHSDKONly-dummy.m */,
+				1222692A02AFCFDD80A6E71608417846 /* Pods-ETHSDKONly.debug.xcconfig */,
+				3BDCDF5B500714BDC672F8CC933B54B2 /* Pods-ETHSDKONly.release.xcconfig */,
 			);
-			name = LEB128;
-			path = LEB128;
+			name = "Pods-ETHSDKONly";
+			path = "Target Support Files/Pods-ETHSDKONly";
 			sourceTree = "<group>";
 		};
-		8358C1ABC674132C547C94BE00DE0C0D /* Support Files */ = {
+		4DF6370B1BEE149C1B1E613D1EF3286B /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E02BF2547C1D8DD7A96E80260FEDAA40 /* OpenSSL-Universal.debug.xcconfig */,
-				E4647FB6AB182E510124D20A86A44ED2 /* OpenSSL-Universal.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/OpenSSL-Universal";
-			sourceTree = "<group>";
-		};
-		8F9A6424146BF3F1448E427D67192E98 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				415E660C82F17D462BDBB357562971C1 /* Pods-ETHSDKONly */,
+				2F14EBB9051B522C3F32C3C628F97A7E /* Pods-ETHSDKONly */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		9E0C1EE1E9397A33614D4DCADDFC2177 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2C57EF8A9E045BA8F968F480AB05480D /* LEB128.modulemap */,
-				DD59FE6A5F654F03813B602E6750778B /* LEB128-dummy.m */,
-				BD8771A03939986E31CCE5DCA95BB38C /* LEB128-prefix.pch */,
-				2B66735509CAFB562EB381AE643FCD07 /* LEB128-umbrella.h */,
-				1E9C63301891C6CA6C9AC16B1F852E15 /* LEB128.debug.xcconfig */,
-				1A4A8387BF4AC741C8DEE55D95E629EE /* LEB128.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/LEB128";
-			sourceTree = "<group>";
-		};
-		A28A9B7D8FAD4DA9BB4C1B30EF056D26 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				35FDBDA3E1D8C4F67EEBAAD3C988F07F /* libcrypto.a */,
-				E0CB753520018F97EF26DAC5C6FED53A /* libssl.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C338825E40C6172A951B499D08E7B63E /* Static */ = {
-			isa = PBXGroup;
-			children = (
-				F5CB0D48A9060DC7F0B0935CBD0E3E6C /* aes.h */,
-				156B206F7103D5DF5497789D0F0AAD4F /* asn1.h */,
-				AD18CE0D4A3448FCA5E4F43B2DEFB0A7 /* asn1_mac.h */,
-				21C7C242840EAAE39266A57CC11495B8 /* asn1t.h */,
-				969987F1D07603CE8A00159ECCE61B83 /* bio.h */,
-				CAD5F800823498F2FBB7FF983EBF0A0F /* blowfish.h */,
-				DD89F126F4799B4B8E1A17404CB6C0A9 /* bn.h */,
-				FC014BBA626E890C86FB868E53D95773 /* buffer.h */,
-				25C3B844ED21C5EE8ACF5768DD0490D6 /* camellia.h */,
-				68412EA81D4332677FD8840DA13214E0 /* cast.h */,
-				BECE75A71882A19DDD0C1C3E19D79C68 /* cmac.h */,
-				9927D4D7EE19E3FC164FA66515BA02E2 /* cms.h */,
-				2F9EE1F8EDC9D075730AA076B202D775 /* comp.h */,
-				3E04B5B10716C046F1DEC02979CA5455 /* conf.h */,
-				60975F6FF290194B15BE4D1379E06218 /* conf_api.h */,
-				0D7ABDDD2CD5E24976B5A955B0BAF47F /* crypto.h */,
-				4ED20064DEB1B377274081CF024AE9F7 /* des.h */,
-				C04FB21A4E823F07C6750CB8E487B209 /* des_old.h */,
-				A7A0CAAF91D4535B3452E761A1DDC47E /* dh.h */,
-				304964DD2C70FE50351BD44AD63620A7 /* dsa.h */,
-				9E8283CC78864683B17E354F9522FEC0 /* dso.h */,
-				40C56F88FCF29B65628B7187F06ACCDF /* dtls1.h */,
-				E5BA1EE855F4ECC4032EE7B7417E8C90 /* e_os2.h */,
-				1686A4E2CF7242C7ABB57CAA1AD4A727 /* ebcdic.h */,
-				BD0FEBBC0BDC12CC93AFE028E14FAEF5 /* ec.h */,
-				7044E15844AF8EF12EFE1EB6F3FAC621 /* ecdh.h */,
-				C3DBEF828D2C9445678DECA94B5CE1E4 /* ecdsa.h */,
-				28266EF3532896203CC72B19F163CCFF /* engine.h */,
-				EF391C83A4571563239FAD0AC67B530E /* err.h */,
-				48EE00BDFE2312CFA688A9F55DCC3A80 /* evp.h */,
-				733C9793E85D65BFDD56D90AE1420E6E /* hmac.h */,
-				0EFDC34313FB4F976605E92D50B4ABCE /* idea.h */,
-				F44930E25009593BC55EB261E6654FCF /* krb5_asn.h */,
-				38E0FFE03A7101DC6B2E5C9903887CE4 /* kssl.h */,
-				F4186035667F074C73C15F780D1731F8 /* lhash.h */,
-				115D2D3E84F449C7B706ABFA3D9FCFA8 /* md4.h */,
-				B25E416E6B3160CE230B8107558DB655 /* md5.h */,
-				FA69A6736623FE4C17C0334D682A12ED /* mdc2.h */,
-				91D74B2916E598CA853B02B4F99DA33B /* modes.h */,
-				5048B9456B583F5592D9E4F27711A5B0 /* obj_mac.h */,
-				EDD0E06116EBF1F4E109F5ECF72CBD7A /* objects.h */,
-				5AE1DE180748A4F2803154A12DF24720 /* ocsp.h */,
-				E1AA654C95E22B6CFAB4288B53106D99 /* opensslconf.h */,
-				7D71C221B01B1F4AF3F692CDCC837E4C /* opensslconf-arm64.h */,
-				2814AAB402CC0F23050BAFA515BCAED3 /* opensslconf-armv7.h */,
-				E14F9AF822561951146C7850F2560BDF /* opensslconf-armv7s.h */,
-				5390C1B9A13DC1E921ED22D0A2861E48 /* opensslconf-i386.h */,
-				118529D8758C112CA7FB966A77BAC54C /* opensslconf-x86_64.h */,
-				112F29B897E1BBA2ABD4FFAEA796BEB4 /* opensslv.h */,
-				4245B45284D9D9F9A0358AF02AB74F2B /* ossl_typ.h */,
-				F8EF94D0253E83C93DF07439561E780C /* pem.h */,
-				20C6829682D3A8D115D753C8AA2A8AEC /* pem2.h */,
-				0CAA6D783D974FB951C55C9B3838407B /* pkcs12.h */,
-				3B06CE6D4B265310A0B6D800EC7C36DB /* pkcs7.h */,
-				951748FD17ABF6733D164083AF14A56A /* pqueue.h */,
-				B1E078B118A505C464B75DCF169120EB /* rand.h */,
-				271458C61B7D8BB8FF3F0DFBC1A77D37 /* rc2.h */,
-				9E643E4EC8DECA99ED4356252A3AE176 /* rc4.h */,
-				B291875CD03AB04537A3D460FDEB1CCF /* ripemd.h */,
-				A72468B8B7EA526800DAA0A817E1F41E /* rsa.h */,
-				686FB123D55D0012435F0A5F88820439 /* safestack.h */,
-				25E7DFA2401F831878F04731DE5C6957 /* seed.h */,
-				BFB872E5DA33908000C759830039D660 /* sha.h */,
-				FAC2C51046D96551F2D590F307AFA089 /* shim.h */,
-				27C0E0D9D432A2296F88FACB5F7D70E4 /* srp.h */,
-				8DC3AED7D9EF83F4F9B2422ABDCAD577 /* srtp.h */,
-				BF12B984F3CE3007E6864E9565B8019F /* ssl.h */,
-				99966F095B4F9830FBC04DFC61FCEEFD /* ssl2.h */,
-				C7DFDFF115800B64A4121A79C93C634A /* ssl23.h */,
-				03F240208611A7FDA69773EC91AA0843 /* ssl3.h */,
-				6F32DA7131F9775DD52A3E7E45764A23 /* stack.h */,
-				46386548BEE51EBBF00D3783DD8343A3 /* symhacks.h */,
-				CEC1A26F6744B0A185E35444F2DD7392 /* tls1.h */,
-				6A21F75AAA953BB3FDC925BE67C8C4EF /* ts.h */,
-				2E8481C54B6212E7F65BAD754EFF6D19 /* txt_db.h */,
-				6AF91868E5E5184BE49ABAA1DEE88240 /* ui.h */,
-				DD34CB58B4265B2740E552A890CB7193 /* ui_compat.h */,
-				691D7E9BE9D81762F238E87FEB303F79 /* whrlpool.h */,
-				8E784D1419CB83C405D73FFFC3294CC8 /* x509.h */,
-				EBD7F654E2E5A2DE087FEE6E8C654AD2 /* x509_vfy.h */,
-				ADFA7B936BAE1EE13D2BCBA5CBFFC4D2 /* x509v3.h */,
-				A28A9B7D8FAD4DA9BB4C1B30EF056D26 /* Frameworks */,
-			);
-			name = Static;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -411,9 +65,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				D9CB220ADAC4A26DBC8B6EDF56F3E6B0 /* Pods */,
-				7D1588B9D4FC29F2ED84D85309F76487 /* Products */,
-				8F9A6424146BF3F1448E427D67192E98 /* Targets Support Files */,
+				21F005F6C431E94623566D3F292575A0 /* Products */,
+				4DF6370B1BEE149C1B1E613D1EF3286B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -424,101 +77,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D9CB220ADAC4A26DBC8B6EDF56F3E6B0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3C442371D1417FB3106CD8A75A2F53A1 /* CB_RIPEMD */,
-				809A34716AC1F83902EAE5934F0D148E /* LEB128 */,
-				1DB348F4F13AFA5D5637D2D2278EDD6D /* OpenSSL-Universal */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		C8A04DC71DD813B1D9A19A00F97427C8 /* Headers */ = {
+		25B0E6A56EFCD0C6F71F9BE2610A9451 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				912279B2B788C85A9D70DD177D2942DD /* LEB128-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F802FB3CCA0D3B9DBA6257C802C99617 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C2326805A460BCD9C4FB3400ADDE8384 /* Pods-ETHSDKONly-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF4ACE04904E8F9E6CC00E46780DB7C6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E138E2012D52A68277ECAA744A25514 /* CB_RIPEMD-umbrella.h in Headers */,
-				5D7760B0B6AA374BCF5CA5DDAF1E8005 /* NSData+Hashing.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		03E414DFBE31BC560DBE997CB6E753D0 /* LEB128 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 790D2CFBA944EBAA5576AB3A9A242142 /* Build configuration list for PBXNativeTarget "LEB128" */;
-			buildPhases = (
-				C8A04DC71DD813B1D9A19A00F97427C8 /* Headers */,
-				7E5F1F5FA71A53933CAF245B5348A6CD /* Sources */,
-				6C78F34AAFE44FB69465991030D466DE /* Frameworks */,
-				09FE8727C29FAAD826CB0180A08A5826 /* Copy generated compatibility header */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LEB128;
-			productName = LEB128;
-			productReference = 7C6970CBD6C511763ACB43431BE0D418 /* libLEB128.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		06BFD32B44A79F52EF8CCDC21B1FC0C9 /* Pods-ETHSDKONly */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB5B7D4697390157E83ECF4B9B0DCBD8 /* Build configuration list for PBXNativeTarget "Pods-ETHSDKONly" */;
+			buildConfigurationList = A89EAA0762B1771A8A2AE5435D477DB2 /* Build configuration list for PBXNativeTarget "Pods-ETHSDKONly" */;
 			buildPhases = (
-				F802FB3CCA0D3B9DBA6257C802C99617 /* Headers */,
-				8A66CC6839750BB7297C595D7F6C0477 /* Sources */,
-				68B99E1F193BECEAA149DFAA641300D8 /* Frameworks */,
+				25B0E6A56EFCD0C6F71F9BE2610A9451 /* Headers */,
+				4ADD213A00F380B7C52A51214CDC6DA2 /* Sources */,
+				A0A51B744BE5633751FE5E460D478A56 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A791BE8D8709DA4AF1819EA90CB22225 /* PBXTargetDependency */,
-				82D30B08D62A1E9D17636C37313A7753 /* PBXTargetDependency */,
-				FF37FDAAF2C9F026A94729631629010E /* PBXTargetDependency */,
 			);
 			name = "Pods-ETHSDKONly";
 			productName = "Pods-ETHSDKONly";
 			productReference = 66B49CBE648CC8651F807274BEE1399D /* libPods-ETHSDKONly.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		12D9AF3C7CC5F9510E791ECE29A005F6 /* CB_RIPEMD */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EFC9A793C87296C376C8AC60BC579FE6 /* Build configuration list for PBXNativeTarget "CB_RIPEMD" */;
-			buildPhases = (
-				FF4ACE04904E8F9E6CC00E46780DB7C6 /* Headers */,
-				717F0FAA7192C035ECC1E06C8C242122 /* Sources */,
-				522EDF3A9BD78176D5C344A43DE4D394 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1972BA36C5C74D7F006903016B9CA5EC /* PBXTargetDependency */,
-			);
-			name = CB_RIPEMD;
-			productName = CB_RIPEMD;
-			productReference = 718E19E7CA4C0F9F0563154BA70A264B /* libCB_RIPEMD.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -539,107 +125,30 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 7D1588B9D4FC29F2ED84D85309F76487 /* Products */;
+			productRefGroup = 21F005F6C431E94623566D3F292575A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				12D9AF3C7CC5F9510E791ECE29A005F6 /* CB_RIPEMD */,
-				03E414DFBE31BC560DBE997CB6E753D0 /* LEB128 */,
-				B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */,
 				06BFD32B44A79F52EF8CCDC21B1FC0C9 /* Pods-ETHSDKONly */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		09FE8727C29FAAD826CB0180A08A5826 /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/LEB128/LEB128.modulemap",
-				"${PODS_ROOT}/Headers/Public/LEB128/LEB128-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/LEB128-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/LEB128/LEB128.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/LEB128/LEB128-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		717F0FAA7192C035ECC1E06C8C242122 /* Sources */ = {
+		4ADD213A00F380B7C52A51214CDC6DA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E4442B5E10E4D19B9C5F43FD95D66A6 /* CB_RIPEMD-dummy.m in Sources */,
-				D5EC07DAFA57082705937E13E981D50A /* NSData+Hashing.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E5F1F5FA71A53933CAF245B5348A6CD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				73CDA84564C622842B66CF41C353882C /* ByteBuffer.swift in Sources */,
-				B6F997D95B480BC854D08DDDBE81FDF4 /* Foundation.swift in Sources */,
-				1C7F62982D0BBC18937447299FBCD155 /* LEB128-dummy.m in Sources */,
-				DD4E64365127A41132B2252758F1909A /* LEB128.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A66CC6839750BB7297C595D7F6C0477 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6B1BBCBDFF5BB25C12970DDEB94C6618 /* Pods-ETHSDKONly-dummy.m in Sources */,
+				403495F80ECB09A78A89BCF3AA1A5CE2 /* Pods-ETHSDKONly-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1972BA36C5C74D7F006903016B9CA5EC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "OpenSSL-Universal";
-			target = B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */;
-			targetProxy = 17A3EFED9083E3D0437DED5BEC976DA5 /* PBXContainerItemProxy */;
-		};
-		82D30B08D62A1E9D17636C37313A7753 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LEB128;
-			target = 03E414DFBE31BC560DBE997CB6E753D0 /* LEB128 */;
-			targetProxy = D6DD3AFF5412EDE73ED27B5C05B87375 /* PBXContainerItemProxy */;
-		};
-		A791BE8D8709DA4AF1819EA90CB22225 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CB_RIPEMD;
-			target = 12D9AF3C7CC5F9510E791ECE29A005F6 /* CB_RIPEMD */;
-			targetProxy = 7B2BB57F8E8BB34F6A48E5B47DA1E1A5 /* PBXContainerItemProxy */;
-		};
-		FF37FDAAF2C9F026A94729631629010E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "OpenSSL-Universal";
-			target = B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */;
-			targetProxy = CE39BB6EA734C546897D301137E3473C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		0A2597F8B1DF950F255CAFE40C758A04 /* Release */ = {
+		0D79AF16BC401B8DDE2095944968DDE8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CB5278D990FACA8CD86A856F81CFCB6 /* Pods-ETHSDKONly.release.xcconfig */;
+			baseConfigurationReference = 3BDCDF5B500714BDC672F8CC933B54B2 /* Pods-ETHSDKONly.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -649,7 +158,6 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ETHSDKONly/Pods-ETHSDKONly.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -725,90 +233,6 @@
 			};
 			name = Debug;
 		};
-		42C47323FDCF4F99169528E35F413ABD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E0B16941F0EA991D56E132EFE7FD65E /* CB_RIPEMD.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/CB_RIPEMD/CB_RIPEMD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/CB_RIPEMD/CB_RIPEMD.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CB_RIPEMD;
-				PRODUCT_NAME = CB_RIPEMD;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4315FE5D951E743E6AE328FE8398665B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4647FB6AB182E510124D20A86A44ED2 /* OpenSSL-Universal.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7D5F50FC66FC10C763A4880731C84455 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07C3695E983117B66E4B6A3E20456333 /* CB_RIPEMD.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/CB_RIPEMD/CB_RIPEMD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/CB_RIPEMD/CB_RIPEMD.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CB_RIPEMD;
-				PRODUCT_NAME = CB_RIPEMD;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		AC5AF2258B1D718C05D6D0E7B9A24E09 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E02BF2547C1D8DD7A96E80260FEDAA40 /* OpenSSL-Universal.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -869,9 +293,9 @@
 			};
 			name = Release;
 		};
-		B2D226847C7AD9AEF499C02265B80A53 /* Debug */ = {
+		F60BDB3BA7666530288B09F34BA86787 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4643DAF7E831E7D7A50F98BFD13BC76D /* Pods-ETHSDKONly.debug.xcconfig */;
+			baseConfigurationReference = 1222692A02AFCFDD80A6E71608417846 /* Pods-ETHSDKONly.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -881,64 +305,12 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ETHSDKONly/Pods-ETHSDKONly.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		BCA91F9C567FCD1AD55321B3EDFFA8F3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A4A8387BF4AC741C8DEE55D95E629EE /* LEB128.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/LEB128/LEB128-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/LEB128/LEB128.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = LEB128;
-				PRODUCT_NAME = LEB128;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		FEE547E6165666B62F9CAB78DC839A00 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E9C63301891C6CA6C9AC16B1F852E15 /* LEB128.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/LEB128/LEB128-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/LEB128/LEB128.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = LEB128;
-				PRODUCT_NAME = LEB128;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -955,38 +327,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59B3808868C910740FB5DD639927F01D /* Build configuration list for PBXAggregateTarget "OpenSSL-Universal" */ = {
+		A89EAA0762B1771A8A2AE5435D477DB2 /* Build configuration list for PBXNativeTarget "Pods-ETHSDKONly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC5AF2258B1D718C05D6D0E7B9A24E09 /* Debug */,
-				4315FE5D951E743E6AE328FE8398665B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		790D2CFBA944EBAA5576AB3A9A242142 /* Build configuration list for PBXNativeTarget "LEB128" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FEE547E6165666B62F9CAB78DC839A00 /* Debug */,
-				BCA91F9C567FCD1AD55321B3EDFFA8F3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB5B7D4697390157E83ECF4B9B0DCBD8 /* Build configuration list for PBXNativeTarget "Pods-ETHSDKONly" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B2D226847C7AD9AEF499C02265B80A53 /* Debug */,
-				0A2597F8B1DF950F255CAFE40C758A04 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EFC9A793C87296C376C8AC60BC579FE6 /* Build configuration list for PBXNativeTarget "CB_RIPEMD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				42C47323FDCF4F99169528E35F413ABD /* Debug */,
-				7D5F50FC66FC10C763A4880731C84455 /* Release */,
+				F60BDB3BA7666530288B09F34BA86787 /* Debug */,
+				0D79AF16BC401B8DDE2095944968DDE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

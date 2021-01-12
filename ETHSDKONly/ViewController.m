@@ -7,13 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "DCEther.h"
+#import "OCEther.h"
+#import "OcTokenPDForehead.h"
 #import "TraningViewController.h"
 #import "PledgeViewController.h"
 #import "CreatWalletViewController.h"
 #import "ImportMnemonicViewController.h"
 #import "ImportKeystoreViewController.h"
 #import "ImportPrivateKeyViewController.h"
+#import "UserInfoViewController.h"
+#import "DeserializationViewController.h"
 #define Bip44Path @"m/44’/65535/0’/0/0"
 @interface ViewController ()
 
@@ -23,6 +26,7 @@
 @property (nonatomic,copy) NSString *privateKey;
 @property (nonatomic,copy) NSString *publicKey;
 @property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UITextView *contenTextView;
 
 @end
 
@@ -32,13 +36,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    
 }
 
 ///  交易
 - (IBAction)transferAction:(UIButton *)sender {
 //    [self traning];
     TraningViewController *vc = [TraningViewController new];
+   
     [self presentViewController:vc animated:YES completion:nil];
 }
 /// 开通权益
@@ -53,14 +57,35 @@
 }
 // 查询
 - (IBAction)balanceAction:(id)sender {
-    [self getBalance];
+    UserInfoViewController *vc = [UserInfoViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
 }
+- (IBAction)deseralizAction:(id)sender {
+    
+    DeserializationViewController *vc = [DeserializationViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 //创建钱包
 - (IBAction)creatWalletAction:(id)sender {
 //    [self creatWallet];
     CreatWalletViewController *vc = [CreatWalletViewController new];
+    vc.modalPresentationStyle = UIModalPresentationPageSheet;
     [self presentViewController:vc animated:YES completion:nil];
 }
+/*
+ UIModalPresentationFullScreen = 0,
+ UIModalPresentationPageSheet API_AVAILABLE(ios(3.2)) API_UNAVAILABLE(tvos),
+ UIModalPresentationFormSheet API_AVAILABLE(ios(3.2)) API_UNAVAILABLE(tvos),
+ UIModalPresentationCurrentContext API_AVAILABLE(ios(3.2)),
+ UIModalPresentationCustom API_AVAILABLE(ios(7.0)),
+ UIModalPresentationOverFullScreen API_AVAILABLE(ios(8.0)),
+ UIModalPresentationOverCurrentContext API_AVAILABLE(ios(8.0)),
+ UIModalPresentationPopover API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos),
+ UIModalPresentationBlurOverFullScreen API_AVAILABLE(tvos(11.0)) API_UNAVAILABLE(ios) API_UNAVAILABLE(watchos),
+ UIModalPresentationNone API_AVAILABLE(ios(7.0)) = -1,
+ UIModalPresentationAutomatic API_AVAILABLE(ios(13.0)) = -2,
+ */
 - (IBAction)importWalletAction:(id)sender {
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"" message:@"导入钱包" preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *mnemonicAction = [UIAlertAction actionWithTitle:@"助记词导入" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -87,14 +112,15 @@
 
 // 创建钱包
 - (void)creatWallet{
-    [DCEther dc_createWithPwd:@"aa1234" path:Bip44Path block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, NSString *publicKey) {
+    [OCEther oc_createWithPwd:@"aa1234" path:Bip44Path block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, NSString *publicKey) {
         NSLog(@"钱包地址：%@，keyStore：%@,助记词:%@,私钥：%@,公钥:%@ /n 普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账",address,keyStore,mnemonicPhrase,privateKey,publicKey);
     }];
 }
 /// 查询余额
 - (void)getBalance{
     __weak typeof(self) weSelf = self;
-    [DCEther dc_getOnlyBalanceAddress:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" success:^(id  _Nullable responseObject) {
+    
+    [OcTokenPDForehead oc_getOnlyBalanceAddress:@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd" success:^(id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
         NSArray *array = responseObject[@"record"];
         NSDictionary *dic = array[0];
@@ -103,6 +129,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //主线程执行
              weSelf.priceLab.text = [NSString stringWithFormat:@"%@",price];
+            self.contenTextView.text = [NSString stringWithFormat:@"%@",responseObject];
         });
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -112,8 +139,13 @@
 - (void)traning{
     NSString *price =@"0.00001";
     NSArray *array = @[@{@"address":@"a7ed1688bb395bb358eedd2d80078137ca17fdde",@"price":price}];
-    [DCEther dc_transferArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:0 poundage:@"0.001" block:^(BOOL isuc,id  _Nullable responseObject) {
+    /*
+    noce 可以接口请求，根据目前所交易的数量自增1:
+    例如: 交易了10笔 则noce为10，下次交易需要增加1 为 noce=11 传入进行交易
+    */
+    [OcTokenPDForehead oc_transferArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:68 poundage:@"0.001" block:^(BOOL isuc,id  _Nullable responseObject,id _Nullable sigh,id _Nullable payNum) {
         if (isuc) {
+            
             NSLog(@"交易完成////普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账");
         }
     }];
@@ -121,7 +153,11 @@
 }
 /// 开通权益
 - (void)interests{
-    [DCEther dc_interestsActionWithPrice:@"1" privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:1 poundage:@"0.001" block:^(BOOL isuc,id  _Nullable responseObject) {
+    /*
+    noce 可以接口请求，根据目前所交易的数量自增1:
+      例如: 交易了10笔 则noce为10，下次交易需要增加1 为 noce=11 传入进行交易
+    */
+    [OcTokenPDForehead oc_interestsActionWithPrice:@"5000" privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:68 poundage:@"0.001" block:^(BOOL isuc,id  _Nullable responseObject,id _Nullable sigh,id _Nullable payNum) {
         if (isuc) {
             NSLog(@"开通权益完成////普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账");
         }
@@ -131,7 +167,11 @@
 - (void)pledge{
     NSString *price =@"1";
     NSArray *array = @[@{@"address":@"0b96c1e9a5661c96a5c8647e6945c2a6f5564bcd",@"price":price}];
-    [DCEther dc_pledgeActionNetworkWithArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:0 poundage:@"0.001" block:^(BOOL isuc,id  _Nullable responseObject) {
+    /*
+    noce 可以接口请求，根据目前所交易的数量自增1:
+       例如: 交易了10笔 则noce为10，下次交易需要增加1 为 noce=11 传入进行交易
+    */
+    [OcTokenPDForehead oc_pledgeActionNetworkWithArray:array privateKey:@"f759e9ba4112b0609b14e2e9d164b585084ea9e9c051b6782d416009b269cc02" noce:68 poundage:@"0.001" block:^(BOOL isuc,id  _Nullable responseObject,id _Nullable sigh,id _Nullable payNum) {
         if (isuc) {
             NSLog(@"质押完成////普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账");
         }

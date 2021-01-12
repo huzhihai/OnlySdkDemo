@@ -7,7 +7,7 @@ target 'ETHSDKONly' do
   # Comment the next line if you don't want to use dynamic frameworks
    #------------------------------------------
     # UI
-    pod 'CB_RIPEMD', '~> 0.9.0'
-    pod 'LEB128', '~> 2.0.0'
-    use_modular_headers!
+#    pod 'CB_RIPEMD', '~> 0.9.0'
+#    pod 'LEB128', '~> 2.0.0'
+#    use_modular_headers!
 end

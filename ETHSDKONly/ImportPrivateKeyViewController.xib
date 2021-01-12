@@ -61,6 +61,13 @@
                         <action selector="importAction:" destination="-1" eventType="touchUpInside" id="JT0-gf-4qo"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiG-qS-bqG">
+                    <rect key="frame" x="50" y="69" width="37" height="30"/>
+                    <state key="normal" title="close"/>
+                    <connections>
+                        <action selector="close:" destination="-1" eventType="touchUpInside" id="Q8X-Ca-jIP"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -71,11 +78,13 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="sA0-Hu-ch4" secondAttribute="trailing" constant="20" id="GWu-oG-O74"/>
                 <constraint firstItem="yyL-6A-Gm1" firstAttribute="leading" secondItem="wMA-bQ-Hds" secondAttribute="trailing" constant="20" id="KL3-g0-KQk"/>
                 <constraint firstItem="yiM-fW-J3A" firstAttribute="top" secondItem="yyL-6A-Gm1" secondAttribute="bottom" constant="100" id="NWE-KU-G9U"/>
+                <constraint firstItem="IiG-qS-bqG" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="25" id="OYi-Sr-jj6"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yiM-fW-J3A" secondAttribute="trailing" constant="100" id="RlQ-es-UYP"/>
                 <constraint firstItem="yyL-6A-Gm1" firstAttribute="centerY" secondItem="wMA-bQ-Hds" secondAttribute="centerY" id="Uo9-eF-USJ"/>
                 <constraint firstItem="wMA-bQ-Hds" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="50" id="Xa7-Hg-XSB"/>
                 <constraint firstItem="yiM-fW-J3A" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="100" id="dqd-8O-xum"/>
                 <constraint firstItem="sA0-Hu-ch4" firstAttribute="leading" secondItem="gxy-Be-vaB" secondAttribute="trailing" constant="20" id="fFw-xp-adv"/>
+                <constraint firstItem="IiG-qS-bqG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="50" id="w0c-ZN-v45"/>
                 <constraint firstItem="gxy-Be-vaB" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="zDy-xf-wBk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

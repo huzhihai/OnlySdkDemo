@@ -7,7 +7,7 @@
 //
 
 #import "ImportPrivateKeyViewController.h"
-#import "DCEther.h"
+#import "OCEther.h"
 @interface ImportPrivateKeyViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *privateKeyTF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTF;
@@ -15,13 +15,16 @@
 @end
 
 @implementation ImportPrivateKeyViewController
+- (IBAction)close:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)importAction:(id)sender {
-    [DCEther dc_importWalletForPrivateKey:self.privateKeyTF.text pwd:self.pwdTF.text block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, NSString *publicKey, BOOL suc, HSWalletError error) {
+    [OCEther oc_importWalletForPrivateKey:self.privateKeyTF.text pwd:self.pwdTF.text block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, NSString *publicKey, BOOL suc, HSWalletError error) {
         NSLog(@"钱包地址：%@，keyStore：%@,助记词:%@,私钥：%@,公钥:%@ /n 普通用户转账需要手续费即可发起交易，高级账号需要开通权益5000可以免手续费转账",address,keyStore,mnemonicPhrase,privateKey,publicKey);
     }];
 }
